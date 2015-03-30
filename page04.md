@@ -1,95 +1,105 @@
-##4 - Indentation
-Four spaces should be used as the unit of indentation. The exact construction of the indentation (spaces vs. tabs) is unspecified. Tabs must be set exactly every 8 spaces (not 4).
+##4 - 缩进
+4个空格常被作为缩进排版的一个单位。缩进的确切解释并未详细指定 (使用空格 还是 tab) . Tab 一定要设置为8个空格 (而非4个)。
 
-###4.1 Line Length
-Avoid lines longer than 80 characters, since they're not handled well by many terminals and tools.
+###4.1 行长度
+尽量避免一行的长度超过80个字符，因为很多终端和工具不能很好处理之。
 
-**Note:** Examples for use in documentation should have a shorter line length-generally no more than 70 characters.
+**注意:** 用于文档中的例子应该使用更短的行长，长度一般不超过70个字符。
 
-###4.2 Wrapping Lines
-When an expression will not fit on a single line, break it according to these general principles:
+###4.2 换行
+当一个表达式无法容纳在一行内时，可以依据如下一般规则断开:
 
-- Break after a comma.
-- Break before an operator.
-- Prefer higher-level breaks to lower-level breaks.
-- Align the new line with the beginning of the expression at the same level on the previous line.
-- If the above rules lead to confusing code or to code that's squished up against the right margin, just indent 8 spaces instead.
+- 在一个逗号后面断开
+- 在一个操作符前面断开
+- 宁可选择较高级别(higher-level)的断开，而非较低级别(lower-level)的断开
+- 新的一行应该与上一行同一级别表达式的开头处对齐
+- 如果以上规则导致你的代码混乱或者使你的代码都堆挤在右边，那就代之以缩进8个空格。
 
-Here are some examples of breaking method calls:
-
-```java
-someMethod(longExpression1, longExpression2, longExpression3, 
-           longExpression4, longExpression5);
- 
-var = someMethod1(longExpression1,
-                  someMethod2(longExpression2,
-                              longExpression3));
-```
-
-Following are two examples of breaking an arithmetic expression. The first is preferred, since the break occurs outside the parenthesized expression, which is at a higher level.
+以下是断开方法调用的一些例子:
 
 ```java
-longName1 = longName2 * (longName3 + longName4 - longName5)
-            + 4 * longname6; // PREFER
 
-longName1 = longName2 * (longName3 + longName4
-                         - longName5) + 4 * longname6; // AVOID 
+	someMethod(longExpression1, longExpression2, longExpression3, 
+	           longExpression4, longExpression5);
+	 
+	var = someMethod1(longExpression1,
+	                  someMethod2(longExpression2,
+	                              longExpression3));
+
 ```
 
-Following are two examples of indenting method declarations. The first is the conventional case. The second would shift the second and third lines to the far right if it used conventional indentation, so instead it indents only 8 spaces.
+以下是两个断开算术表达式的例子。前者更好，因为断开处位于括号表达式的外边，这是个较高级别的断开。
 
 ```java
-//CONVENTIONAL INDENTATION
-someMethod(int anArg, Object anotherArg, String yetAnotherArg,
-           Object andStillAnother) {
-    ...
-}
 
-//INDENT 8 SPACES TO AVOID VERY DEEP INDENTS
-private static synchronized horkingLongMethodName(int anArg,
-        Object anotherArg, String yetAnotherArg,
-        Object andStillAnother) {
-    ...
-}
+	longName1 = longName2 * (longName3 + longName4 - longName5)
+	            + 4 * longname6; // 推荐
+	
+	longName1 = longName2 * (longName3 + longName4
+	                         - longName5) + 4 * longname6; // 避免 
+	                         
 ```
 
-Line wrapping for if statements should generally use the 8-space rule, since conventional (4 space) indentation makes seeing the body difficult. For example:
+以下是两个缩进方法声明的例子。前者是常规情形。后者如果按照常规的缩进方法就会使得第二行和第三行太靠右边，所以只缩进8个字符。
 
 ```java
-//DON'T USE THIS INDENTATION
-if ((condition1 && condition2)
-    || (condition3 && condition4)
-    ||!(condition5 && condition6)) { //BAD WRAPS
-    doSomethingAboutIt();            //MAKE THIS LINE EASY TO MISS
-} 
 
-//USE THIS INDENTATION INSTEAD
-if ((condition1 && condition2)
-        || (condition3 && condition4)
-        ||!(condition5 && condition6)) {
-    doSomethingAboutIt();
-} 
+	//常规缩进
+	someMethod(int anArg, Object anotherArg, String yetAnotherArg,
+	           Object andStillAnother) {
+	    ...
+	}
+	
+	//缩进8个空格来避免缩进的太深
+	private static synchronized horkingLongMethodName(int anArg,
+	        Object anotherArg, String yetAnotherArg,
+	        Object andStillAnother) {
+	    ...
+	}
 
-//OR USE THIS
-if ((condition1 && condition2) || (condition3 && condition4)
-        ||!(condition5 && condition6)) {
-    doSomethingAboutIt();
-}
 ```
 
-Here are three acceptable ways to format ternary expressions:
+if语句的换行通常使用8个空格的规则，因为常规缩进(4个空格)会使语句体看起来比较费劲。比如:
 
 ```java
-alpha = (aLongBooleanExpression) ? beta : gamma;  
 
-alpha = (aLongBooleanExpression) ? beta
-                                 : gamma;  
+	//不要使用这种
+	if ((condition1 && condition2)
+	    || (condition3 && condition4)
+	    ||!(condition5 && condition6)) { //BAD WRAPS
+	    doSomethingAboutIt();            //MAKE THIS LINE EASY TO MISS
+	} 
+	
+	//用这个来代替
+	if ((condition1 && condition2)
+	        || (condition3 && condition4)
+	        ||!(condition5 && condition6)) {
+	    doSomethingAboutIt();
+	} 
+	
+	//或用这种
+	if ((condition1 && condition2) || (condition3 && condition4)
+	        ||!(condition5 && condition6)) {
+	    doSomethingAboutIt();
+	}
 
-alpha = (aLongBooleanExpression)
-        ? beta 
-        : gamma;
 ```
 
-[CONTENTS](TOC.md)
+这里有三种可行的方法用于处理三元运算表达式:
 
-[PREVIOUS](page03.md) [NEXT](page05.md)
+```java
+
+	alpha = (aLongBooleanExpression) ? beta : gamma;  
+	
+	alpha = (aLongBooleanExpression) ? beta
+	                                 : gamma;  
+	
+	alpha = (aLongBooleanExpression)
+	        ? beta 
+	        : gamma;
+
+```
+
+
+
+[PREVIOUS](page03.md) | [CONTENTS](SUMMARY.md) | [NEXT](page05.md)

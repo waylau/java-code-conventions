@@ -56,4 +56,4 @@ Class (`static`) 变量 | 先是`public`class 变量,接着是 `protected`,再�
 方法 | 这些方法应该按功能，而非作用域或访问权限，分组。例如，一个私有的类方法可以置于两个公有的实例方法之间。其目的是为了更便于阅读和理解代码.
 
 
-[PREVIOUS](page02.md) | [CONTENTS](TOC.md) | [NEXT](page04.md)
+[PREVIOUS](page02.md) | [CONTENTS](SUMMARY.md) | [NEXT](page04.md)
