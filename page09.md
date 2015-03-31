@@ -12,4 +12,4 @@
 常量(Constants)	 | 类常量和ANSI常量的声明，应该全部大写，单词间用下划线隔开。(尽量避免ANSI常量，容易引起错误)	 | `static final int MIN_WIDTH = 4` `static final int MAX_WIDTH = 999` `static final int GET_THE_CPU = 1`
 
 
-[PREVIOUS](page08.md) | [CONTENTS](SUMMARY.md) |[NEXT](page10.md)
+[PREVIOUS](page08.md) | [CONTENTS](SUMMARY.md) | [NEXT](page10.md)

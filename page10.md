@@ -1,108 +1,131 @@
-##10 - Programming Practices
-###10.1 Providing Access to Instance and Class Variables
-Don't make any instance or class variable public without good reason. Often, instance variables don't need to be explicitly set or gotten-often that happens as a side effect of method calls.
+##10 - 编程惯例
+###10.1 提供对实例以及类变量的访问
+如果没有充分理由，不要设置实例或者类变量为 public。通常实例变量无需显式的set(设置)和gotten(获取)，通常这作为方法调用的side effect (边缘效应)而产生。
 
-One example of appropriate public instance variables is the case where the class is essentially a data structure, with no behavior. In other words, if you would have used a `struct` instead of a class (if Java supported `struct`), then it's appropriate to make the class's instance variables public.
+一个具有 public 实例变量的恰当例子是,类仅作为数据结构，没有行为。即，若你要使用一个`struct`(结构)而非一个类(如果java支持`struct`的话)，那么把类的实例变量声明为 public 是合适的。
 
-###10.2 Referring to Class Variables and Methods
-Avoid using an object to access a class (`static`) variable or method. Use a class name instead. For example:
+###10.2 引用类变量和类方法
+避免用一个对象访问一个类的(`static`)变量和方法。应该用类名替代。例如
 
 ```java
-classMethod();             //OK
-AClass.classMethod();      //OK
-anObject.classMethod();    //AVOID!
+
+	classMethod();             // OK
+	AClass.classMethod();      // OK
+	anObject.classMethod();    // 避免!
+
 ```
 
-###10.3 Constants
-Numerical constants (literals) should not be coded directly, except for `-1`, `0`, and `1`, which can appear in a `for` loop as counter values.
+###10.3 常量
+位于for循环中作为计数器值的数字常量，除了`-1`,`0`和`1`之外，不应被直接写入代码。
 
-###10.4 Variable Assignments
-Avoid assigning several variables to the same value in a single statement. It is hard to read. Example:
+###10.4 变量赋值
+避免在一个语句中给多个变量赋相同的值。它很难读懂。例如:
 
 ```java
-fooBar.fChar = barFoo.lchar = 'c'; // AVOID!
+
+	fooBar.fChar = barFoo.lchar = 'c'; // 避免!
+
 ```
 
-Do not use the assignment operator in a place where it can be easily confused with the equality operator. Example:
+不要将赋值运算符用在容易与相等关系运算符混淆的地方。例如:
 
 ```java
-if (c++ = d++) {        // AVOID! (Java disallows)
-    ...
-}
+
+	if (c++ = d++) {        // 避免! (Java 不允许)
+	    ...
+	}
+
 ```
 
-should be written as
+应写成
 
 ```java
-if ((c++ = d++) != 0) {
-    ...
-}
+
+	if ((c++ = d++) != 0) {
+	    ...
+	}
+
 ```
 
-Do not use embedded assignments in an attempt to improve run-time performance. This is the job of the compiler. Example:
+不要使用内嵌(embedded)赋值运算符试图提高运行时的效率，这是编译器的工作。例如:
 
 ```java
-d = (a = b + c) + r;        // AVOID!
+
+	d = (a = b + c) + r;        // 避免!
+
 ```
 
-should be written as
+应该写成
 
 ```java
-a = b + c;
-d = a + r;
+
+	a = b + c;
+	d = a + r;
+
 ```
 
-###10.5 Miscellaneous Practices
-####10.5.1 Parentheses
-It is generally a good idea to use parentheses liberally in expressions involving mixed operators to avoid operator precedence problems. Even if the operator precedence seems clear to you, it might not be to others-you shouldn't assume that other programmers know precedence as well as you do.
+###10.5 其它惯例
+####10.5.1 圆括号
+一般而言，在含有多种运算符的表达式中使用圆括号来避免运算符优先级问题，是个好方法。即使运算符的优先级对你而言可能很清楚，但对其他人未必如此。你不能假设别的程序员和你一样清楚运算符的优先级。
 
 ```java
-if (a == b && c == d)     // AVOID!
-if ((a == b) && (c == d)) // RIGHT
+
+	if (a == b && c == d)     // 避免!
+	if ((a == b) && (c == d)) // 正确
+
 ```
 
-####10.5.2 Returning Values
-Try to make the structure of your program match the intent. Example:
+####10.5.2 返回值
+设法让你的程序结构符合目的。例如:
 
 ```java
-if (booleanExpression) {
-    return true;
-} else {
-    return false;
-}
+
+	if (booleanExpression) {
+	    return true;
+	} else {
+	    return false;
+	}
+
 ```
   
-should instead be written as
+应该用下面代替
 
 ```java
-return booleanExpression;
+
+	return booleanExpression;
+
 ```
 
-Similarly,
+同理,
 
 ```java
-if (condition) {
-    return x;
-}
-return y;
+
+	if (condition) {
+	    return x;
+	}
+	return y;
+
 ```
 
-should be written as
+应该写为
 
 ```java
-return (condition ? x : y);
+
+	return (condition ? x : y);
+
 ```
 
-####10.5.3 Expressions before `?' in the Conditional Operator
-If an expression containing a binary operator appears before the `?` in the ternary `?:` operator, it should be parenthesized. Example:
+####10.5.3 条件运算符`?`前的表达式
+如果一个包含二元运算符的表达式出现在三元运算符`?:`的`?`之前，那么应该给表达式添上一对圆括号。例如：
 
 ```java
-(x >= 0) ? x : -x;
+
+	(x >= 0) ? x : -x;
+
 ````
 
-####10.5.4 Special Comments
-Use `XXX` in a comment to flag something that is bogus but works. Use `FIXME` to flag something that is bogus and broken.
+####10.5.4 特殊注解
+使用`XXX` 标识处代码虽然实现了功能，但是实现的方法有待商榷，希望将来能改进。使用 `FIXME`标识处代码需要修正，甚至代码是错误的，不能工作，需要修复。
 
-[CONTENTS](TOC.md)
 
-[PREVIOUS](page09.md) [NEXT](page11.md)
+[PREVIOUS](page09.md) | [CONTENTS](SUMMARY.md) | [NEXT](page11.md)
