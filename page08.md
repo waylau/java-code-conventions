@@ -1,56 +1,65 @@
-##8 - White Space
-###8.1 Blank Lines
-Blank lines improve readability by setting off sections of code that are logically related.
+##8 - 空白
+###8.1 空行
+空行将逻辑相关的代码段分隔开，以提高可读性。
 
-Two blank lines should always be used in the following circumstances:
+下列情况应该总是使用两个空行：
 
-- Between sections of a source file
-- Between class and interface definitions
+- 一个源文件的两个片段之间
+- 类声明和接口声明之间
 
-One blank line should always be used in the following circumstances:
+下列情况应该总是使用一个空行：
 
-- Between methods
-- Between the local variables in a method and its first statement
-- Before a block (see [section 5.1.1](page05.md#511-block-comments)) or single-line (see [section 5.1.2](page05.md#512-single-line-comments)) comment
-- Between logical sections inside a method to improve readability
+- 两个方法之间
+- 方法内的局部变量和方法的第一条语句之间
+- 块注释（参见"5.1.1 节"）或单行注释（参见"5.1.2 节"）之前
+- 一个方法内的两个逻辑段之间，用以提高可读性
 
-###8.2 Blank Spaces
-Blank spaces should be used in the following circumstances:
+###8.2 空格
+下列情况应该使用空格：
 
-- A keyword followed by a parenthesis should be separated by a space. Example:
-
-```java
-while (true) {
-    ...
-}
-```
-
-Note that a blank space should not be used between a method name and its opening parenthesis. This helps to distinguish keywords from method calls.
-
-- A blank space should appear after commas in argument lists.
-- All binary operators except . should be separated from their operands by spaces. Blank spaces should never separate unary operators such as unary minus, increment (`++`), and decrement (`--`) from their operands. Example:
+- 一个紧跟着括号的关键字应该被空格分开，例如：
 
 ```java
-a += c + d;
-a = (a + b) / (c * d);
-    
-while (d++ = s++) {
-    n++;
-}
-printSize("size is " + foo + "\n");
+
+	while (true) {
+	    ...
+	}
+
 ```
 
-- The expressions in a `for` statement should be separated by blank spaces. Example:
-```java
-for (expr1; expr2; expr3)
-```
+注意：空格不应该置于方法名与其左括号之间。这将有助于区分关键字和方法调用。
 
-- Casts should be followed by a blank space. Examples:
+- 空格应该位于参数列表中逗号的后面
+- 所有的二元运算符，除了`.`，应该使用空格将之与操作数分开。一元操作符和操作数之间不因该加空格，比如：负号(`-`)、自增(`++`)和自减(`--`)。例如:
 
 ```java
-myMethod((byte) aNum, (Object) x);
-myMethod((int) (cp + 5), ((int) (i + 3)) + 1);
-```
-[CONTENTS](TOC.md)
 
-[PREVIOUS](page07.md) [NEXT](page09.md)
+	a += c + d;
+	a = (a + b) / (c * d);
+	    
+	while (d++ = s++) {
+	    n++;
+	}
+	printSize("size is " + foo + "\n");
+
+```
+
+- `for`语句中的表达式应该被空格分开，例如:
+- 
+```java
+
+	for (expr1; expr2; expr3)
+
+```
+
+- 强制转型后应该跟一个空格，例如:
+
+```java
+
+	myMethod((byte) aNum, (Object) x);
+	myMethod((int) (cp + 5), ((int) (i + 3)) + 1);
+
+```
+
+
+[PREVIOUS](page07.md) | [CONTENTS](SUMMARY.md) | [NEXT](page09.md)

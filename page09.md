@@ -1,15 +1,15 @@
-##9 - Naming Conventions
-Naming conventions make programs more understandable by making them easier to read. They can also give information about the function of the identifier-for example, whether it's a constant, package, or class-which can be helpful in understanding the code.
+##9 - 命名规范
+命名规范使程序更易读，从而更易于理解。它们也可以提供一些有关标识符功能的信息，以助于理解代码，例如，不论它是一个常量，包，还是类
 
-Identifier Type | Rules for Naming | Examples
-----------------|------------------|---------
-Packages | The prefix of a unique package name is always written in all-lowercase ASCII letters and should be one of the top-level domain names, currently com, edu, gov, mil, net, org, or one of the English two-letter codes identifying countries as specified in ISO Standard 3166, 1981. Subsequent components of the package name vary according to an organization's own internal naming conventions. Such conventions might specify that certain directory name components be division, department, project, machine, or login names. | `com.sun.eng` `com.apple.quicktime.v2` `edu.cmu.cs.bovik.cheese`
-Classes | Class names should be nouns, in mixed case with the first letter of each internal word capitalized. Try to keep your class names simple and descriptive. Use whole words-avoid acronyms and abbreviations (unless the abbreviation is much more widely used than the long form, such as URL or HTML). | <code>class&nbsp;Raster;</code> <code>class&nbsp;ImageSprite;</code>
-Interfaces | Interface names should be capitalized like class names. | <code>interface&nbsp;RasterDelegate;</code> <code>interface&nbsp;Storing;</code>
-Methods | Methods should be verbs, in mixed case with the first letter lowercase, with the first letter of each internal word capitalized. | `run();` `runFast();` `getBackground();`
-Variables | Except for variables, all instance, class, and class constants are in mixed case with a lowercase first letter. Internal words start with capital letters. Variable names should not start with underscore `_` or dollar sign `$` characters, even though both are allowed. Variable names should be short yet meaningful. The choice of a variable name should be mnemonic- that is, designed to indicate to the casual observer the intent of its use. One-character variable names should be avoided except for temporary "throwaway" variables. Common names for temporary variables are `i`, `j`, `k`, `m`, and `n` for integers; `c`, `d`, and `e` for characters. | `int    i;` `char   c;` `float  myWidth;`
-Constants | The names of variables declared class constants and of ANSI constants should be all uppercase with words separated by underscores (`_`). (ANSI constants should be avoided, for ease of debugging.) | <code>static&nbsp;final&nbsp;int&nbsp;MIN_WIDTH&nbsp;=&nbsp;4;</code> <code>static&nbsp;final&nbsp;int&nbsp;MAX_WIDTH&nbsp;=&nbsp;999;</code> <code>static&nbsp;final&nbsp;int&nbsp;GET_THE_CPU&nbsp;=&nbsp;1;</code>
+标识符类型 | 命名规则 | 示例
+----------|---------|---------
+包(Packages) | 一个唯一包名的前缀总是全部小写的ASCII字母并且是一个顶级域名，通常是com，edu，gov，mil，net，org，或1981年ISO 3166标准所指定的标识国家的英文双字符代码。包名的后续部分根据不同机构各自内部的命名规范而不尽相同。这类命名规范可能以特定目录名的组成来区分部门(department)，项目(project)，机器(machine)，或注册名(login names)。 | `com.sun.eng` `com.apple.quicktime.v2` `edu.cmu.cs.bovik.cheese`
+类(Classes)	 | 命名规则：类名是个一名词，采用大小写混合的方式，每个单词的首字母大写。尽量使你的类名简洁而富于描述。使用完整单词，避免缩写词(除非该缩写词被更广泛使用，像URL，HTML) | `class Raster` `class ImageSprite`
+接口(Interfaces) | 命名规则：大小写规则与类名相似 | `interface RasterDelegate` `interface Storing`
+方法(Methods)	 | 方法名是一个动词，采用大小写混合的方式，第一个单词的首字母小写，其后单词的首字母大写。 | 	`run()` `runFast()` `getBackground()`
+变量(Variables)	 | 除了变量名外，所有实例，包括类，类常量，均采用大小写混合的方式，第一个单词的首字母小写，其后单词的首字母大写。变量名不应以下划线或美元符号开头，尽管这在语法上是允许的。变量名应简短且富于描述。变量名的选用应该易于记忆，即，能够指出其用途。尽量避免单个字符的变量名，除非是一次性的临时变量。临时变量通常被取名为`i`，`j`，`k`，`m`和`n`，它们一般用于整型；`c`，`d`，`e`，它们一般用于字符型。 | 	`char c` `int i` `float myWidth`
+实例变量(Instance Variables)	 | 大小写规则和变量名相似，除了前面需要一个下划线	 | `int _employeeId` `String _name` `Customer _customer`
+常量(Constants)	 | 类常量和ANSI常量的声明，应该全部大写，单词间用下划线隔开。(尽量避免ANSI常量，容易引起错误)	 | `static final int MIN_WIDTH = 4` `static final int MAX_WIDTH = 999` `static final int GET_THE_CPU = 1`
 
-[CONTENTS](TOC.md)
 
-[PREVIOUS](page08.md) [NEXT](page10.md)
+[PREVIOUS](page08.md) | [CONTENTS](SUMMARY.md) |[NEXT](page10.md)
