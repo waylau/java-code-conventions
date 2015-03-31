@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Introduction | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
+        <title>空白 | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Chinese translation of the Code Conventions for the Java Programming Language  document. Thisdocument contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. ">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -19,8 +19,10 @@
         
     
     
-    <link rel="next" href="./page01.html" />
+    <link rel="next" href="./page09.html" />
     
+    
+    <link rel="prev" href="./page07.html" />
     
 
         
@@ -32,7 +34,7 @@
 
 
         
-    <div class="book" data-level="0" data-basepath="." data-revision="1427815053928">
+    <div class="book" data-level="8" data-basepath="." data-revision="1427815053928">
     
 
 <div class="book-summary">
@@ -50,7 +52,7 @@
         
     
         
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -176,7 +178,7 @@
         </li>
     
         
-        <li class="chapter " data-level="8" data-path="page08.html">
+        <li class="chapter active" data-level="8" data-path="page08.html">
             
                 
                     <a href="./page08.html">
@@ -328,35 +330,61 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_9">
                     
-                        <h1 id="code-conventions-for-the-java-programming-language-java-">Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</h1>
-<p>Chinese translation of the <a href="http://www.oracle.com/technetwork/java/index-135089.html" target="_blank">Code Conventions for the Java Programming Language</a>  document. This
-document contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. </p>
+                        <h2 id="8---">8 - 空白</h2>
+<h3 id="81-">8.1 空行</h3>
+<p>空行将逻辑相关的代码段分隔开，以提高可读性。</p>
+<p>下列情况应该总是使用两个空行：</p>
 <ul>
-<li>80% of the lifetime cost of a piece of software goes to maintenance.</li>
-<li>Hardly any software is maintained for its whole life by the original author.</li>
-<li>Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.</li>
+<li>一个源文件的两个片段之间</li>
+<li>类声明和接口声明之间</li>
 </ul>
-<p>The last revision to this document was revised and updated on April 20, 1999 by Sun Microsystems. There is alse a GitBook version of the book: <a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> or <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>
-Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
-<p>《Java 编码规范》中文翻译。这个文档包含了 Sun 所遵循以及推荐的标准的规范。它涵盖了文件名，文件组织，压缩，声明，注释，语句，空白，命名规范，编码惯例以及一个代码示例。</p>
+<p>下列情况应该总是使用一个空行：</p>
 <ul>
-<li>一个软件的生命周期中，80%的花费用于维护.</li>
-<li>几乎没有任何一个软件，在其整个生命周期中，均由最初的作者来维护.</li>
-<li>编码规范可以改善软件的可读性，可以让程序员尽快而彻底地理解新的代码.</li>
+<li>两个方法之间</li>
+<li>方法内的局部变量和方法的第一条语句之间</li>
+<li>块注释（参见&quot;5.1.1 节&quot;）或单行注释（参见&quot;5.1.2 节&quot;）之前</li>
+<li>一个方法内的两个逻辑段之间，用以提高可读性</li>
 </ul>
-<p>文档最后版本由 Sun 公司于1999年4月20日更新，虽然过去十几年，但这个规范至今对编码的规范指导仍然适用，特此翻译。如有勘误欢迎指正，<a href="https://github.com/waylau/java-code-conventions/issues" target="_blank">点此</a>提问。</p>
-<p>另外有 GitBook 的版本方便阅读<a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> 或者 <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>（国内访问速度快）</p>
-<p>从<a href="SUMMARY.html">目录</a>开始阅读吧</p>
-<h3 id="contact">Contact:</h3>
+<h3 id="82-">8.2 空格</h3>
+<p>下列情况应该使用空格：</p>
 <ul>
-<li>Blog:<a href="http://www.waylau.com" target="_blank">www.waylau.com</a></li>
-<li>Gmail: <a href="mailto:waylau521@gmail.com" target="_blank">waylau521@gmail.com</a></li>
-<li>Weibo: <a href="http://weibo.com/waylau521" target="_blank">waylau521</a></li>
-<li>Twitter: <a href="https://twitter.com/waylau521" target="_blank">waylau521</a></li>
-<li>Github : <a href="https://github.com/waylau" target="_blank">waylau</a></li>
+<li>一个紧跟着括号的关键字应该被空格分开，例如：</li>
 </ul>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
+        ...
+    }
+</code></pre>
+<p>注意：空格不应该置于方法名与其左括号之间。这将有助于区分关键字和方法调用。</p>
+<ul>
+<li>空格应该位于参数列表中逗号的后面</li>
+<li>所有的二元运算符，除了<code>.</code>，应该使用空格将之与操作数分开。一元操作符和操作数之间不因该加空格，比如：负号(<code>-</code>)、自增(<code>++</code>)和自减(<code>--</code>)。例如:</li>
+</ul>
+<pre><code class="lang-java">
+    a += c + d;
+    a = (a + b) / (c * d);
+
+    <span class="hljs-keyword">while</span> (d++ = s++) {
+        n++;
+    }
+    printSize(<span class="hljs-string">"size is "</span> + foo + <span class="hljs-string">"\n"</span>);
+</code></pre>
+<ul>
+<li><code>for</code>语句中的表达式应该被空格分开，例如:</li>
+<li><p>```java</p>
+<p>  for (expr1; expr2; expr3)</p>
+</li>
+</ul>
+<pre><code>
+- 强制转型后应该跟一个空格，例如:
+
+```java
+
+    myMethod((byte) aNum, (Object) x);
+    myMethod((int) (cp + 5), ((int) (i + 3)) + 1);
+</code></pre><p><a href="page07.html">PREVIOUS</a> | <a href="SUMMARY.html">CONTENTS</a> | <a href="page09.html">NEXT</a></p>
 
                     
                     </section>
@@ -367,8 +395,10 @@ Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
         </div>
 
         
+        <a href="./page07.html" class="navigation navigation-prev " aria-label="Previous page: 语句"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./page01.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 介绍"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./page09.html" class="navigation navigation-next " aria-label="Next page: 命名规范"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Introduction | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
+        <title>文件组织 | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Chinese translation of the Code Conventions for the Java Programming Language  document. Thisdocument contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. ">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -19,8 +19,10 @@
         
     
     
-    <link rel="next" href="./page01.html" />
+    <link rel="next" href="./page04.html" />
     
+    
+    <link rel="prev" href="./page02.html" />
     
 
         
@@ -32,7 +34,7 @@
 
 
         
-    <div class="book" data-level="0" data-basepath="." data-revision="1427815053928">
+    <div class="book" data-level="3" data-basepath="." data-revision="1427815053928">
     
 
 <div class="book-summary">
@@ -50,7 +52,7 @@
         
     
         
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -96,7 +98,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3" data-path="page03.html">
+        <li class="chapter active" data-level="3" data-path="page03.html">
             
                 
                     <a href="./page03.html">
@@ -328,35 +330,81 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_4">
                     
-                        <h1 id="code-conventions-for-the-java-programming-language-java-">Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</h1>
-<p>Chinese translation of the <a href="http://www.oracle.com/technetwork/java/index-135089.html" target="_blank">Code Conventions for the Java Programming Language</a>  document. This
-document contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. </p>
+                        <h2 id="3---">3 - 文件组织</h2>
+<p>一个文件由被空行分割而成的段落以及标识每个段落的可选注释共同组成。</p>
+<p>超过2000行的程序难以阅读，应该尽量避免。</p>
+<p>正确编码格式的范例，见 <a href="page11.html">&quot;Java 源文件案例&quot;</a>.</p>
+<h3 id="31-java-">3.1 Java 源文件</h3>
+<p>每个Java源文件都包含一个单一的公共类或接口。若私有类和接口与一个公共类相关联，可以将它们和公共类放入同一个源文件。公共类必须是这个文件中的第一个类或接口。</p>
+<p>Java 源文件还遵循以下规则：</p>
 <ul>
-<li>80% of the lifetime cost of a piece of software goes to maintenance.</li>
-<li>Hardly any software is maintained for its whole life by the original author.</li>
-<li>Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.</li>
+<li>开头注释</li>
+<li>包和引入语句</li>
+<li>类和接口声明 </li>
 </ul>
-<p>The last revision to this document was revised and updated on April 20, 1999 by Sun Microsystems. There is alse a GitBook version of the book: <a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> or <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>
-Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
-<p>《Java 编码规范》中文翻译。这个文档包含了 Sun 所遵循以及推荐的标准的规范。它涵盖了文件名，文件组织，压缩，声明，注释，语句，空白，命名规范，编码惯例以及一个代码示例。</p>
-<ul>
-<li>一个软件的生命周期中，80%的花费用于维护.</li>
-<li>几乎没有任何一个软件，在其整个生命周期中，均由最初的作者来维护.</li>
-<li>编码规范可以改善软件的可读性，可以让程序员尽快而彻底地理解新的代码.</li>
-</ul>
-<p>文档最后版本由 Sun 公司于1999年4月20日更新，虽然过去十几年，但这个规范至今对编码的规范指导仍然适用，特此翻译。如有勘误欢迎指正，<a href="https://github.com/waylau/java-code-conventions/issues" target="_blank">点此</a>提问。</p>
-<p>另外有 GitBook 的版本方便阅读<a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> 或者 <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>（国内访问速度快）</p>
-<p>从<a href="SUMMARY.html">目录</a>开始阅读吧</p>
-<h3 id="contact">Contact:</h3>
-<ul>
-<li>Blog:<a href="http://www.waylau.com" target="_blank">www.waylau.com</a></li>
-<li>Gmail: <a href="mailto:waylau521@gmail.com" target="_blank">waylau521@gmail.com</a></li>
-<li>Weibo: <a href="http://weibo.com/waylau521" target="_blank">waylau521</a></li>
-<li>Twitter: <a href="https://twitter.com/waylau521" target="_blank">waylau521</a></li>
-<li>Github : <a href="https://github.com/waylau" target="_blank">waylau</a></li>
-</ul>
+<h3 id="311-">3.1.1 开头注释</h3>
+<p>所有的源文件都应该在开头有一个C语言风格的注释，其中列出类名、版本信息、日期和版权声明:</p>
+<pre><code class="lang-java">
+    <span class="hljs-comment">/*
+     * Classname
+     * 
+     * Version information
+     *
+     * Date
+     * 
+     * Copyright notice
+     */</span>
+</code></pre>
+<h3 id="312-">3.1.2 包和引入语句</h3>
+<p>在多数 Java 源文件中，第一个非注释行是 <code>package</code> 语句。在它之后可以跟 <code>import</code> 语句。例如 :</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">package</span> java.awt;
+
+    <span class="hljs-keyword">import</span> java.awt.peer.CanvasPeer;
+</code></pre>
+<h3 id="313-">3.1.3 类和接口声明</h3>
+<p>T下表描述了类和接口声明的各个部分以及它们出现的先后次序。见 <a href="page11.html">&quot;Java 源文件案例&quot;</a> 一个包含注释的例子.</p>
+<table>
+<thead>
+<tr>
+<th>class/interface 声明的各个部分</th>
+<th>注解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Class/interface 文档注释 (<code>/**...*/</code>)</td>
+<td>详见 <a href="page05.html">&quot;文档注释&quot;</a></td>
+</tr>
+<tr>
+<td><code>class</code>或<code>interface</code> 声明</td>
+<td></td>
+</tr>
+<tr>
+<td>Class/interface 实现注释 (<code>/*...*/</code>), 如果有必要的话</td>
+<td>该注释应包含任何有关整个类或接口的信息，而这些信息又不适合作为 class/interface  文档注释.</td>
+</tr>
+<tr>
+<td>Class (<code>static</code>) 变量</td>
+<td>先是<code>public</code>class 变量,接着是 <code>protected</code>,再是包级别 (没有访问修饰符), 再是 <code>private</code>.</td>
+</tr>
+<tr>
+<td>实例变量</td>
+<td>先是 <code>public</code> class 变量,接着是 <code>protected</code>,再是包级别 (没有访问修饰符), 再是 <code>private</code>.</td>
+</tr>
+<tr>
+<td>构造器</td>
+<td></td>
+</tr>
+<tr>
+<td>方法</td>
+<td>这些方法应该按功能，而非作用域或访问权限，分组。例如，一个私有的类方法可以置于两个公有的实例方法之间。其目的是为了更便于阅读和理解代码.</td>
+</tr>
+</tbody>
+</table>
+<p><a href="page02.html">PREVIOUS</a> | <a href="SUMMARY.html">CONTENTS</a> | <a href="page04.html">NEXT</a></p>
 
                     
                     </section>
@@ -367,8 +415,10 @@ Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
         </div>
 
         
+        <a href="./page02.html" class="navigation navigation-prev " aria-label="Previous page: 文件名称"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./page01.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 介绍"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./page04.html" class="navigation navigation-next " aria-label="Next page: 缩进"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

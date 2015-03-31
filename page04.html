@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Introduction | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
+        <title>缩进 | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Chinese translation of the Code Conventions for the Java Programming Language  document. Thisdocument contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. ">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -19,8 +19,10 @@
         
     
     
-    <link rel="next" href="./page01.html" />
+    <link rel="next" href="./page05.html" />
     
+    
+    <link rel="prev" href="./page03.html" />
     
 
         
@@ -32,7 +34,7 @@
 
 
         
-    <div class="book" data-level="0" data-basepath="." data-revision="1427815053928">
+    <div class="book" data-level="4" data-basepath="." data-revision="1427815053928">
     
 
 <div class="book-summary">
@@ -50,7 +52,7 @@
         
     
         
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -112,7 +114,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4" data-path="page04.html">
+        <li class="chapter active" data-level="4" data-path="page04.html">
             
                 
                     <a href="./page04.html">
@@ -328,35 +330,88 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_5">
                     
-                        <h1 id="code-conventions-for-the-java-programming-language-java-">Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</h1>
-<p>Chinese translation of the <a href="http://www.oracle.com/technetwork/java/index-135089.html" target="_blank">Code Conventions for the Java Programming Language</a>  document. This
-document contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. </p>
+                        <h2 id="4---">4 - 缩进</h2>
+<p>4个空格常被作为缩进排版的一个单位。缩进的确切解释并未详细指定 (使用空格 还是 tab) . Tab 一定要设置为8个空格 (而非4个)。</p>
+<h3 id="41-">4.1 行长度</h3>
+<p>尽量避免一行的长度超过80个字符，因为很多终端和工具不能很好处理之。</p>
+<p><strong>注意:</strong> 用于文档中的例子应该使用更短的行长，长度一般不超过70个字符。</p>
+<h3 id="42-">4.2 换行</h3>
+<p>当一个表达式无法容纳在一行内时，可以依据如下一般规则断开:</p>
 <ul>
-<li>80% of the lifetime cost of a piece of software goes to maintenance.</li>
-<li>Hardly any software is maintained for its whole life by the original author.</li>
-<li>Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.</li>
+<li>在一个逗号后面断开</li>
+<li>在一个操作符前面断开</li>
+<li>宁可选择较高级别(higher-level)的断开，而非较低级别(lower-level)的断开</li>
+<li>新的一行应该与上一行同一级别表达式的开头处对齐</li>
+<li>如果以上规则导致你的代码混乱或者使你的代码都堆挤在右边，那就代之以缩进8个空格。</li>
 </ul>
-<p>The last revision to this document was revised and updated on April 20, 1999 by Sun Microsystems. There is alse a GitBook version of the book: <a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> or <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>
-Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
-<p>《Java 编码规范》中文翻译。这个文档包含了 Sun 所遵循以及推荐的标准的规范。它涵盖了文件名，文件组织，压缩，声明，注释，语句，空白，命名规范，编码惯例以及一个代码示例。</p>
-<ul>
-<li>一个软件的生命周期中，80%的花费用于维护.</li>
-<li>几乎没有任何一个软件，在其整个生命周期中，均由最初的作者来维护.</li>
-<li>编码规范可以改善软件的可读性，可以让程序员尽快而彻底地理解新的代码.</li>
-</ul>
-<p>文档最后版本由 Sun 公司于1999年4月20日更新，虽然过去十几年，但这个规范至今对编码的规范指导仍然适用，特此翻译。如有勘误欢迎指正，<a href="https://github.com/waylau/java-code-conventions/issues" target="_blank">点此</a>提问。</p>
-<p>另外有 GitBook 的版本方便阅读<a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> 或者 <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>（国内访问速度快）</p>
-<p>从<a href="SUMMARY.html">目录</a>开始阅读吧</p>
-<h3 id="contact">Contact:</h3>
-<ul>
-<li>Blog:<a href="http://www.waylau.com" target="_blank">www.waylau.com</a></li>
-<li>Gmail: <a href="mailto:waylau521@gmail.com" target="_blank">waylau521@gmail.com</a></li>
-<li>Weibo: <a href="http://weibo.com/waylau521" target="_blank">waylau521</a></li>
-<li>Twitter: <a href="https://twitter.com/waylau521" target="_blank">waylau521</a></li>
-<li>Github : <a href="https://github.com/waylau" target="_blank">waylau</a></li>
-</ul>
+<p>以下是断开方法调用的一些例子:</p>
+<pre><code class="lang-java">
+    someMethod(longExpression1, longExpression2, longExpression3, 
+               longExpression4, longExpression5);
+
+    var = someMethod1(longExpression1,
+                      someMethod2(longExpression2,
+                                  longExpression3));
+</code></pre>
+<p>以下是两个断开算术表达式的例子。前者更好，因为断开处位于括号表达式的外边，这是个较高级别的断开。</p>
+<pre><code class="lang-java">
+    longName1 = longName2 * (longName3 + longName4 - longName5)
+                + <span class="hljs-number">4</span> * longname6; <span class="hljs-comment">// 推荐</span>
+
+    longName1 = longName2 * (longName3 + longName4
+                             - longName5) + <span class="hljs-number">4</span> * longname6; <span class="hljs-comment">// 避免</span>
+</code></pre>
+<p>以下是两个缩进方法声明的例子。前者是常规情形。后者如果按照常规的缩进方法就会使得第二行和第三行太靠右边，所以只缩进8个字符。</p>
+<pre><code class="lang-java">
+    <span class="hljs-comment">//常规缩进</span>
+    someMethod(<span class="hljs-keyword">int</span> anArg, Object anotherArg, String yetAnotherArg,
+               Object andStillAnother) {
+        ...
+    }
+
+    <span class="hljs-comment">//缩进8个空格来避免缩进的太深</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-title">horkingLongMethodName</span><span class="hljs-params">(<span class="hljs-keyword">int</span> anArg,
+            Object anotherArg, String yetAnotherArg,
+            Object andStillAnother)</span> </span>{
+        ...
+    }
+</code></pre>
+<p>if语句的换行通常使用8个空格的规则，因为常规缩进(4个空格)会使语句体看起来比较费劲。比如:</p>
+<pre><code class="lang-java">
+    <span class="hljs-comment">//不要使用这种</span>
+    <span class="hljs-keyword">if</span> ((condition1 &amp;&amp; condition2)
+        || (condition3 &amp;&amp; condition4)
+        ||!(condition5 &amp;&amp; condition6)) { <span class="hljs-comment">//BAD WRAPS</span>
+        doSomethingAboutIt();            <span class="hljs-comment">//MAKE THIS LINE EASY TO MISS</span>
+    } 
+
+    <span class="hljs-comment">//用这个来代替</span>
+    <span class="hljs-keyword">if</span> ((condition1 &amp;&amp; condition2)
+            || (condition3 &amp;&amp; condition4)
+            ||!(condition5 &amp;&amp; condition6)) {
+        doSomethingAboutIt();
+    } 
+
+    <span class="hljs-comment">//或用这种</span>
+    <span class="hljs-keyword">if</span> ((condition1 &amp;&amp; condition2) || (condition3 &amp;&amp; condition4)
+            ||!(condition5 &amp;&amp; condition6)) {
+        doSomethingAboutIt();
+    }
+</code></pre>
+<p>这里有三种可行的方法用于处理三元运算表达式:</p>
+<pre><code class="lang-java">
+    alpha = (aLongBooleanExpression) ? beta : gamma;  
+
+    alpha = (aLongBooleanExpression) ? beta
+                                     : gamma;  
+
+    alpha = (aLongBooleanExpression)
+            ? beta 
+            : gamma;
+</code></pre>
+<p><a href="page03.html">PREVIOUS</a> | <a href="SUMMARY.html">CONTENTS</a> | <a href="page05.html">NEXT</a></p>
 
                     
                     </section>
@@ -367,8 +422,10 @@ Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
         </div>
 
         
+        <a href="./page03.html" class="navigation navigation-prev " aria-label="Previous page: 文件组织"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./page01.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 介绍"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./page05.html" class="navigation navigation-next " aria-label="Next page: 注释"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

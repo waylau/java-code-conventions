@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Introduction | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
+        <title>介绍 | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Chinese translation of the Code Conventions for the Java Programming Language  document. Thisdocument contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. ">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -19,8 +19,10 @@
         
     
     
-    <link rel="next" href="./page01.html" />
+    <link rel="next" href="./page02.html" />
     
+    
+    <link rel="prev" href="./index.html" />
     
 
         
@@ -32,7 +34,7 @@
 
 
         
-    <div class="book" data-level="0" data-basepath="." data-revision="1427815053928">
+    <div class="book" data-level="1" data-basepath="." data-revision="1427815053928">
     
 
 <div class="book-summary">
@@ -50,7 +52,7 @@
         
     
         
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -64,7 +66,7 @@
         </li>
     
         
-        <li class="chapter " data-level="1" data-path="page01.html">
+        <li class="chapter active" data-level="1" data-path="page01.html">
             
                 
                     <a href="./page01.html">
@@ -328,35 +330,20 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_3">
                     
-                        <h1 id="code-conventions-for-the-java-programming-language-java-">Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</h1>
-<p>Chinese translation of the <a href="http://www.oracle.com/technetwork/java/index-135089.html" target="_blank">Code Conventions for the Java Programming Language</a>  document. This
-document contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. </p>
-<ul>
-<li>80% of the lifetime cost of a piece of software goes to maintenance.</li>
-<li>Hardly any software is maintained for its whole life by the original author.</li>
-<li>Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.</li>
-</ul>
-<p>The last revision to this document was revised and updated on April 20, 1999 by Sun Microsystems. There is alse a GitBook version of the book: <a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> or <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>
-Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
-<p>《Java 编码规范》中文翻译。这个文档包含了 Sun 所遵循以及推荐的标准的规范。它涵盖了文件名，文件组织，压缩，声明，注释，语句，空白，命名规范，编码惯例以及一个代码示例。</p>
+                        <h2 id="1---">1 - 介绍</h2>
+<h3 id="11-">1.1 为啥要有编码规范</h3>
+<p>对于编程人员来说，编码规范的重要性体现在以下几个方面:</p>
 <ul>
 <li>一个软件的生命周期中，80%的花费用于维护.</li>
 <li>几乎没有任何一个软件，在其整个生命周期中，均由最初的作者来维护.</li>
 <li>编码规范可以改善软件的可读性，可以让程序员尽快而彻底地理解新的代码.</li>
+<li>如果你把你的源代码作为一个产品，你要确保它是否被很好的打包并且清晰无误，就像你已构建的其它任何产品一样.</li>
 </ul>
-<p>文档最后版本由 Sun 公司于1999年4月20日更新，虽然过去十几年，但这个规范至今对编码的规范指导仍然适用，特此翻译。如有勘误欢迎指正，<a href="https://github.com/waylau/java-code-conventions/issues" target="_blank">点此</a>提问。</p>
-<p>另外有 GitBook 的版本方便阅读<a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> 或者 <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>（国内访问速度快）</p>
-<p>从<a href="SUMMARY.html">目录</a>开始阅读吧</p>
-<h3 id="contact">Contact:</h3>
-<ul>
-<li>Blog:<a href="http://www.waylau.com" target="_blank">www.waylau.com</a></li>
-<li>Gmail: <a href="mailto:waylau521@gmail.com" target="_blank">waylau521@gmail.com</a></li>
-<li>Weibo: <a href="http://weibo.com/waylau521" target="_blank">waylau521</a></li>
-<li>Twitter: <a href="https://twitter.com/waylau521" target="_blank">waylau521</a></li>
-<li>Github : <a href="https://github.com/waylau" target="_blank">waylau</a></li>
-</ul>
+<h3 id="12-">1.2 致谢</h3>
+<p>本文档反映的是 Sun MicroSystems 公司 <a href="http://docs.oracle.com/javase/specs/" target="_blank">Java Language Specification（Java语言规范）</a> 中的编码标准部分,主要贡献者有 Peter King, Patrick Naughton, Mike DeMoney, Jonni Kanerva, Kathy Walrath, 和 Scott Hommel.</p>
+<p><a href="SUMMARY.html">CONTENTS</a> | <a href="page02.html">NEXT</a></p>
 
                     
                     </section>
@@ -367,8 +354,10 @@ Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
         </div>
 
         
+        <a href="./index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./page01.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 介绍"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./page02.html" class="navigation navigation-next " aria-label="Next page: 文件名称"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

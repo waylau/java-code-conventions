@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Introduction | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
+        <title>注释 | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Chinese translation of the Code Conventions for the Java Programming Language  document. Thisdocument contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. ">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -19,8 +19,10 @@
         
     
     
-    <link rel="next" href="./page01.html" />
+    <link rel="next" href="./page06.html" />
     
+    
+    <link rel="prev" href="./page04.html" />
     
 
         
@@ -32,7 +34,7 @@
 
 
         
-    <div class="book" data-level="0" data-basepath="." data-revision="1427815053928">
+    <div class="book" data-level="5" data-basepath="." data-revision="1427815053928">
     
 
 <div class="book-summary">
@@ -50,7 +52,7 @@
         
     
         
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -128,7 +130,7 @@
         </li>
     
         
-        <li class="chapter " data-level="5" data-path="page05.html">
+        <li class="chapter active" data-level="5" data-path="page05.html">
             
                 
                     <a href="./page05.html">
@@ -328,35 +330,93 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_1">
                     
-                        <h1 id="code-conventions-for-the-java-programming-language-java-">Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</h1>
-<p>Chinese translation of the <a href="http://www.oracle.com/technetwork/java/index-135089.html" target="_blank">Code Conventions for the Java Programming Language</a>  document. This
-document contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. </p>
-<ul>
-<li>80% of the lifetime cost of a piece of software goes to maintenance.</li>
-<li>Hardly any software is maintained for its whole life by the original author.</li>
-<li>Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.</li>
-</ul>
-<p>The last revision to this document was revised and updated on April 20, 1999 by Sun Microsystems. There is alse a GitBook version of the book: <a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> or <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>
-Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
-<p>《Java 编码规范》中文翻译。这个文档包含了 Sun 所遵循以及推荐的标准的规范。它涵盖了文件名，文件组织，压缩，声明，注释，语句，空白，命名规范，编码惯例以及一个代码示例。</p>
-<ul>
-<li>一个软件的生命周期中，80%的花费用于维护.</li>
-<li>几乎没有任何一个软件，在其整个生命周期中，均由最初的作者来维护.</li>
-<li>编码规范可以改善软件的可读性，可以让程序员尽快而彻底地理解新的代码.</li>
-</ul>
-<p>文档最后版本由 Sun 公司于1999年4月20日更新，虽然过去十几年，但这个规范至今对编码的规范指导仍然适用，特此翻译。如有勘误欢迎指正，<a href="https://github.com/waylau/java-code-conventions/issues" target="_blank">点此</a>提问。</p>
-<p>另外有 GitBook 的版本方便阅读<a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> 或者 <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>（国内访问速度快）</p>
-<p>从<a href="SUMMARY.html">目录</a>开始阅读吧</p>
-<h3 id="contact">Contact:</h3>
-<ul>
-<li>Blog:<a href="http://www.waylau.com" target="_blank">www.waylau.com</a></li>
-<li>Gmail: <a href="mailto:waylau521@gmail.com" target="_blank">waylau521@gmail.com</a></li>
-<li>Weibo: <a href="http://weibo.com/waylau521" target="_blank">waylau521</a></li>
-<li>Twitter: <a href="https://twitter.com/waylau521" target="_blank">waylau521</a></li>
-<li>Github : <a href="https://github.com/waylau" target="_blank">waylau</a></li>
-</ul>
+                        <h2 id="5---">5 - 注释</h2>
+<p>Java 有两类注释: implementation comments（实现注释）和 documentation comments（文档注释）。 实现注释常见于 C++,使用 <code>/*...*/</code>,和 <code>//</code>。文档注释 (也称为&quot;doc comments&quot;) 是 Java 独有的,使用 <code>/**...*/</code>。文档注释可以通过 javadoc 工具转成 HTML 文件。</p>
+<p>实现注释用以注释代码或者特殊的实现。 文档注释从 implementation-free (实现自由)的角度描述代码的规范。它可以被那些手头没有源码的开发人员读懂。</p>
+<p>注释应被用来给出代码的总览，并提供代码自身没有提供的附加信息。注释应该仅包含与阅读和理解程序有关的信息。例如，相应的包如何被建立或位于哪个目录下之类的信息不应包括在注释中。</p>
+<p>在注释里，对设计决策中重要的或者不是显而易见的地方进行说明是可以的，但应避免提供代码中己清晰表达出来的重复信息。多余的的注释很容易过时。通常应避免那些代码更新就可能过时的注释。</p>
+<p><strong>注意:</strong> 频繁的注释有时反映出代码的低质量。当你觉得被迫要加注释的时候，考虑一下重写代码使其更清晰。</p>
+<p>注释不应写在用星号或其他字符画出来的大框里。</p>
+<p>注释不应包括诸如制表符和回退符之类的特殊字符。</p>
+<h3 id="51-">5.1 实现注释的格式</h3>
+<p>实现注释的格式主要有4种: block（块）, single-line（单行）, trailing（尾端）, 和 end-of-line（行末）.</p>
+<h4 id="511-">5.1.1 块注释</h4>
+<p>块注释通常用于提供对文件，方法，数据结构和算法的描述。块注释被置于每个文件的开始处以及每个方法之前。它们也可以被用于其他地方，比如方法内部。在功能和方法内部的块注释应该和它们所描述的代码具有一样的缩进格式。</p>
+<p>块注释之首应该有一个空行，用于把块注释和代码分割开来，比如：</p>
+<pre><code class="lang-java">
+    <span class="hljs-comment">/*
+     * Here is a block comment.
+     */</span>
+</code></pre>
+<p>块注释可以以/*-开头，这样indent(1)就可以将之识别为一个代码块的开始，而不会重排它。</p>
+<pre><code class="lang-java">
+    <span class="hljs-comment">/*-
+     * Here is a block comment with some very special
+     * formatting that I want indent(1) to ignore.
+     *
+     *    one
+     *        two
+     *            three
+     */</span>
+</code></pre>
+<p><strong>Note:</strong> 如果你不使用indent(1)，就不必在代码中使用/*-，或为他人可能对你的代码运行indent(1)作让步。详见于 5.2 节 &quot;Documentation Comments&quot;</p>
+<h4 id="512-">5.1.2 单行注释</h4>
+<p>短注释可以显示在一行内，并与其后的代码具有一样的缩进层级。如果一个注释不能在一行内写完，就该采用块注释(参见&quot;5.1.1 块注释&quot;)。单行注释之前应该有一个空行。以下是一个 Java 代码中单行注释的例子：:</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">if</span> (condition) {
+
+        <span class="hljs-comment">/* Handle the condition. */</span>
+        ...
+    }
+</code></pre>
+<h4 id="513-">5.1.3 尾端注释</h4>
+<p>极短的注释可以与它们所要描述的代码位于同一行，但是应该有足够的空白来分开代码和注释。若有多个短注释出现于大段代码中，它们应该具有相同的缩进。</p>
+<p>以下是一个Java代码中尾端注释的例子：</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">if</span> (a == <span class="hljs-number">2</span>) {
+        <span class="hljs-keyword">return</span> TRUE;            <span class="hljs-comment">/* special case */</span>
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-function"><span class="hljs-keyword">return</span> <span class="hljs-title">isPrime</span><span class="hljs-params">(a)</span></span>;      <span class="hljs-comment">/* works only for odd a */</span>
+    }
+</code></pre>
+<h4 id="514-">5.1.4 行末注释</h4>
+<p>注释界定符 <code>//</code> ，可以注释掉整行或者一行中的一部分。它一般不用于连续多行的注释文本；然而，它可以用来注释掉连续多行的代码段。以下是所有三种风格的例子：</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">if</span> (foo &gt; <span class="hljs-number">1</span>) {
+
+        <span class="hljs-comment">// Do a double-flip.</span>
+        ...
+    }
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;          <span class="hljs-comment">// Explain why here.</span>
+
+    <span class="hljs-comment">//if (bar &gt; 1) {</span>
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">//    // Do a triple-flip.</span>
+    <span class="hljs-comment">//    ...</span>
+    <span class="hljs-comment">//}</span>
+    <span class="hljs-comment">//else</span>
+    <span class="hljs-comment">//    return false;</span>
+</code></pre>
+<h4 id="52-">5.2 文档注释</h4>
+<p>注意：此处描述的注释格式之范例，参见<a href="page11.html">&quot;Java 源文件范例&quot;</a>。</p>
+<p>更多细节，详见&quot;How to Write Doc Comments for Javadoc&quot;，里面包含了文档注释标签的信息(@return, @param, @see): </p>
+<p><a href="http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html" target="_blank">链接</a></p>
+<p>更多关于文档注释和 javadoc，详见 javadoc 主页</p>
+<p><a href="http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-141999.html#" target="_blank">这里</a></p>
+<p>文档注释描述Java的类、接口、构造器，方法，以及字段(field)。每个文档注释都会被置于注释定界符 <code>/**...*/</code>之中，一个注释对应一个类、接口或成员。该注释应位于声明之前：</p>
+<pre><code class="lang-java">
+    <span class="hljs-javadoc">/**
+     * The Example class provides ...
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Example</span> </span>{ ...
+</code></pre>
+<p>注意顶层(top-level)的类和接口是不缩进的，而其成员是缩进的。描述类和接口的文档注释的第一行(<code>/**</code>)不需缩进；随后的文档注释每行都缩进1格(使星号纵向对齐)。成员，包括构造函数在内，其文档注释的第一行缩进4格，随后每行都缩进5格。</p>
+<p>若你想给出有关类、接口、变量或方法的信息，而这些信息又不适合写在文档中，则可使用实现块注释(见5.1.1)或紧跟在声明后面的单行注释(见5.1.2)。例如，有关一个类实现的细节，应放入紧跟在类声明后面的实现块注释中，而不是放在文档注释中。</p>
+<p>文档注释不能放在一个方法或构造器的定义块中，因为Java会将位于文档注释之后的第一个声明与其相关联。</p>
+<p><a href="page04.html">PREVIOUS</a> | <a href="SUMMARY.html">CONTENTS</a> | <a href="page06.html">NEXT</a></p>
 
                     
                     </section>
@@ -367,8 +427,10 @@ Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
         </div>
 
         
+        <a href="./page04.html" class="navigation navigation-prev " aria-label="Previous page: 缩进"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./page01.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 介绍"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./page06.html" class="navigation navigation-next " aria-label="Next page: 声明"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

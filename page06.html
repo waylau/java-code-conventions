@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Introduction | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
+        <title>声明 | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Chinese translation of the Code Conventions for the Java Programming Language  document. Thisdocument contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. ">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -19,8 +19,10 @@
         
     
     
-    <link rel="next" href="./page01.html" />
+    <link rel="next" href="./page07.html" />
     
+    
+    <link rel="prev" href="./page05.html" />
     
 
         
@@ -32,7 +34,7 @@
 
 
         
-    <div class="book" data-level="0" data-basepath="." data-revision="1427815053928">
+    <div class="book" data-level="6" data-basepath="." data-revision="1427815053928">
     
 
 <div class="book-summary">
@@ -50,7 +52,7 @@
         
     
         
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -144,7 +146,7 @@
         </li>
     
         
-        <li class="chapter " data-level="6" data-path="page06.html">
+        <li class="chapter active" data-level="6" data-path="page06.html">
             
                 
                     <a href="./page06.html">
@@ -328,35 +330,85 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_7">
                     
-                        <h1 id="code-conventions-for-the-java-programming-language-java-">Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</h1>
-<p>Chinese translation of the <a href="http://www.oracle.com/technetwork/java/index-135089.html" target="_blank">Code Conventions for the Java Programming Language</a>  document. This
-document contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. </p>
+                        <h2 id="6---">6 - 声明</h2>
+<h3 id="61-">6.1 每行声明变量的数量</h3>
+<p>推荐一行一个声明，因为这样以利于写注释。即,</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">int</span> level; <span class="hljs-comment">// indentation level</span>
+    <span class="hljs-keyword">int</span> size;  <span class="hljs-comment">// size of table</span>
+</code></pre>
+<p>要优于</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">int</span> level, size;
+</code></pre>
+<p>不要将不同类型变量的声明放在同一行，例如:</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">int</span> foo,  fooarray[]; <span class="hljs-comment">// 错误!</span>
+</code></pre>
+<p><strong>注意:</strong> 上面的例子中，在类型和标识符之间放了一个空格，另一种被允许的替代方式是使用制表符:</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">int</span>     level;          <span class="hljs-comment">// indentation level</span>
+    <span class="hljs-keyword">int</span>     size;           <span class="hljs-comment">// size of table</span>
+    Object  currentEntry;   <span class="hljs-comment">// currently selected table entry</span>
+</code></pre>
+<h3 id="62-">6.2 初始化</h3>
+<p>尽量在声明局部变量的同时初始化。唯一不这么做的理由是变量的初始值依赖于某些先前发生的计算。</p>
+<h3 id="63-">6.3 布局</h3>
+<p>只在代码块的开始处声明变量。（一个块是指任何被包含在大括号<code>{</code> 和 <code>}</code>中间的代码。）不要在首次用到该变量时才声明之。这会把注意力不集中的程序员搞糊涂，同时会妨碍代码在该作用域内的可移植性。</p>
+<pre><code class="lang-java">
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">myMethod</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">int</span> int1 = <span class="hljs-number">0</span>;         <span class="hljs-comment">// beginning of method block</span>
+
+        <span class="hljs-keyword">if</span> (condition) {
+            <span class="hljs-keyword">int</span> int2 = <span class="hljs-number">0</span>;     <span class="hljs-comment">// beginning of "if" block</span>
+            ...
+        }
+    }
+</code></pre>
+<p>该规则的一个例外是for循环的索引变量:</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; maxLoops; i++) { ... }
+</code></pre>
+<p>避免声明的局部变量覆盖上一级声明的变量。例如，不要在内部代码块中声明相同的变量名:</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">int</span> count;
+    ...
+    myMethod() {
+        <span class="hljs-keyword">if</span> (condition) {
+            <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;     <span class="hljs-comment">// 避免!</span>
+            ...
+        }
+        ...
+    }
+</code></pre>
+<h3 id="64-">6.4 类和接口的声明</h3>
+<p>当编写类和接口是，应该遵守以下格式规则：</p>
 <ul>
-<li>80% of the lifetime cost of a piece of software goes to maintenance.</li>
-<li>Hardly any software is maintained for its whole life by the original author.</li>
-<li>Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.</li>
+<li>在方法名与其参数列表之前的左括号<code>(</code>间不要有空格</li>
+<li>左大括号<code>{</code>位于声明语句同行的末尾</li>
+<li>右大括号<code>}</code>另起一行，与相应的声明语句对齐，除非是一个空语句，<code>}</code>应紧跟在<code>{</code>之后</li>
 </ul>
-<p>The last revision to this document was revised and updated on April 20, 1999 by Sun Microsystems. There is alse a GitBook version of the book: <a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> or <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>
-Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
-<p>《Java 编码规范》中文翻译。这个文档包含了 Sun 所遵循以及推荐的标准的规范。它涵盖了文件名，文件组织，压缩，声明，注释，语句，空白，命名规范，编码惯例以及一个代码示例。</p>
+<pre><code class="lang-java">
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Object</span> </span>{
+        <span class="hljs-keyword">int</span> ivar1;
+        <span class="hljs-keyword">int</span> ivar2;
+
+        Sample(<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j) {
+            ivar1 = i;
+            ivar2 = j;
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">emptyMethod</span><span class="hljs-params">()</span> </span>{}
+
+        ...
+    }
+</code></pre>
 <ul>
-<li>一个软件的生命周期中，80%的花费用于维护.</li>
-<li>几乎没有任何一个软件，在其整个生命周期中，均由最初的作者来维护.</li>
-<li>编码规范可以改善软件的可读性，可以让程序员尽快而彻底地理解新的代码.</li>
+<li>方法与方法之间以空行分隔</li>
 </ul>
-<p>文档最后版本由 Sun 公司于1999年4月20日更新，虽然过去十几年，但这个规范至今对编码的规范指导仍然适用，特此翻译。如有勘误欢迎指正，<a href="https://github.com/waylau/java-code-conventions/issues" target="_blank">点此</a>提问。</p>
-<p>另外有 GitBook 的版本方便阅读<a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> 或者 <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>（国内访问速度快）</p>
-<p>从<a href="SUMMARY.html">目录</a>开始阅读吧</p>
-<h3 id="contact">Contact:</h3>
-<ul>
-<li>Blog:<a href="http://www.waylau.com" target="_blank">www.waylau.com</a></li>
-<li>Gmail: <a href="mailto:waylau521@gmail.com" target="_blank">waylau521@gmail.com</a></li>
-<li>Weibo: <a href="http://weibo.com/waylau521" target="_blank">waylau521</a></li>
-<li>Twitter: <a href="https://twitter.com/waylau521" target="_blank">waylau521</a></li>
-<li>Github : <a href="https://github.com/waylau" target="_blank">waylau</a></li>
-</ul>
+<p><a href="page05.html">PREVIOUS</a> | <a href="SUMMARY.html">CONTENTS</a> | <a href="page07.html">NEXT</a></p>
 
                     
                     </section>
@@ -367,8 +419,10 @@ Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
         </div>
 
         
+        <a href="./page05.html" class="navigation navigation-prev " aria-label="Previous page: 注释"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./page01.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 介绍"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./page07.html" class="navigation navigation-next " aria-label="Next page: 语句"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

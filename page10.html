@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Introduction | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
+        <title>编程惯例 | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Chinese translation of the Code Conventions for the Java Programming Language  document. Thisdocument contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. ">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -19,8 +19,10 @@
         
     
     
-    <link rel="next" href="./page01.html" />
+    <link rel="next" href="./page11.html" />
     
+    
+    <link rel="prev" href="./page09.html" />
     
 
         
@@ -32,7 +34,7 @@
 
 
         
-    <div class="book" data-level="0" data-basepath="." data-revision="1427815053928">
+    <div class="book" data-level="10" data-basepath="." data-revision="1427815053928">
     
 
 <div class="book-summary">
@@ -50,7 +52,7 @@
         
     
         
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -208,7 +210,7 @@
         </li>
     
         
-        <li class="chapter " data-level="10" data-path="page10.html">
+        <li class="chapter active" data-level="10" data-path="page10.html">
             
                 
                     <a href="./page10.html">
@@ -328,35 +330,88 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_12">
                     
-                        <h1 id="code-conventions-for-the-java-programming-language-java-">Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</h1>
-<p>Chinese translation of the <a href="http://www.oracle.com/technetwork/java/index-135089.html" target="_blank">Code Conventions for the Java Programming Language</a>  document. This
-document contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. </p>
-<ul>
-<li>80% of the lifetime cost of a piece of software goes to maintenance.</li>
-<li>Hardly any software is maintained for its whole life by the original author.</li>
-<li>Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.</li>
-</ul>
-<p>The last revision to this document was revised and updated on April 20, 1999 by Sun Microsystems. There is alse a GitBook version of the book: <a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> or <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>
-Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
-<p>《Java 编码规范》中文翻译。这个文档包含了 Sun 所遵循以及推荐的标准的规范。它涵盖了文件名，文件组织，压缩，声明，注释，语句，空白，命名规范，编码惯例以及一个代码示例。</p>
-<ul>
-<li>一个软件的生命周期中，80%的花费用于维护.</li>
-<li>几乎没有任何一个软件，在其整个生命周期中，均由最初的作者来维护.</li>
-<li>编码规范可以改善软件的可读性，可以让程序员尽快而彻底地理解新的代码.</li>
-</ul>
-<p>文档最后版本由 Sun 公司于1999年4月20日更新，虽然过去十几年，但这个规范至今对编码的规范指导仍然适用，特此翻译。如有勘误欢迎指正，<a href="https://github.com/waylau/java-code-conventions/issues" target="_blank">点此</a>提问。</p>
-<p>另外有 GitBook 的版本方便阅读<a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> 或者 <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>（国内访问速度快）</p>
-<p>从<a href="SUMMARY.html">目录</a>开始阅读吧</p>
-<h3 id="contact">Contact:</h3>
-<ul>
-<li>Blog:<a href="http://www.waylau.com" target="_blank">www.waylau.com</a></li>
-<li>Gmail: <a href="mailto:waylau521@gmail.com" target="_blank">waylau521@gmail.com</a></li>
-<li>Weibo: <a href="http://weibo.com/waylau521" target="_blank">waylau521</a></li>
-<li>Twitter: <a href="https://twitter.com/waylau521" target="_blank">waylau521</a></li>
-<li>Github : <a href="https://github.com/waylau" target="_blank">waylau</a></li>
-</ul>
+                        <h2 id="10---">10 - 编程惯例</h2>
+<h3 id="101-">10.1 提供对实例以及类变量的访问</h3>
+<p>如果没有充分理由，不要设置实例或者类变量为 public。通常实例变量无需显式的set(设置)和gotten(获取)，通常这作为方法调用的side effect (边缘效应)而产生。</p>
+<p>一个具有 public 实例变量的恰当例子是,类仅作为数据结构，没有行为。即，若你要使用一个<code>struct</code>(结构)而非一个类(如果java支持<code>struct</code>的话)，那么把类的实例变量声明为 public 是合适的。</p>
+<h3 id="102-">10.2 引用类变量和类方法</h3>
+<p>避免用一个对象访问一个类的(<code>static</code>)变量和方法。应该用类名替代。例如</p>
+<pre><code class="lang-java">
+    classMethod();             <span class="hljs-comment">// OK</span>
+    AClass.classMethod();      <span class="hljs-comment">// OK</span>
+    anObject.classMethod();    <span class="hljs-comment">// 避免!</span>
+</code></pre>
+<h3 id="103-">10.3 常量</h3>
+<p>位于for循环中作为计数器值的数字常量，除了<code>-1</code>,<code>0</code>和<code>1</code>之外，不应被直接写入代码。</p>
+<h3 id="104-">10.4 变量赋值</h3>
+<p>避免在一个语句中给多个变量赋相同的值。它很难读懂。例如:</p>
+<pre><code class="lang-java">
+    fooBar.fChar = barFoo.lchar = <span class="hljs-string">'c'</span>; <span class="hljs-comment">// 避免!</span>
+</code></pre>
+<p>不要将赋值运算符用在容易与相等关系运算符混淆的地方。例如:</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">if</span> (c++ = d++) {        <span class="hljs-comment">// 避免! (Java 不允许)</span>
+        ...
+    }
+</code></pre>
+<p>应写成</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">if</span> ((c++ = d++) != <span class="hljs-number">0</span>) {
+        ...
+    }
+</code></pre>
+<p>不要使用内嵌(embedded)赋值运算符试图提高运行时的效率，这是编译器的工作。例如:</p>
+<pre><code class="lang-java">
+    d = (a = b + c) + r;        <span class="hljs-comment">// 避免!</span>
+</code></pre>
+<p>应该写成</p>
+<pre><code class="lang-java">
+    a = b + c;
+    d = a + r;
+</code></pre>
+<h3 id="105-">10.5 其它惯例</h3>
+<h4 id="1051-">10.5.1 圆括号</h4>
+<p>一般而言，在含有多种运算符的表达式中使用圆括号来避免运算符优先级问题，是个好方法。即使运算符的优先级对你而言可能很清楚，但对其他人未必如此。你不能假设别的程序员和你一样清楚运算符的优先级。</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">if</span> (a == b &amp;&amp; c == d)     <span class="hljs-comment">// 避免!</span>
+    <span class="hljs-keyword">if</span> ((a == b) &amp;&amp; (c == d)) <span class="hljs-comment">// 正确</span>
+</code></pre>
+<h4 id="1052-">10.5.2 返回值</h4>
+<p>设法让你的程序结构符合目的。例如:</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">if</span> (booleanExpression) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+</code></pre>
+<p>应该用下面代替</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">return</span> booleanExpression;
+</code></pre>
+<p>同理,</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">if</span> (condition) {
+        <span class="hljs-keyword">return</span> x;
+    }
+    <span class="hljs-keyword">return</span> y;
+</code></pre>
+<p>应该写为</p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">return</span> (condition ? x : y);
+</code></pre>
+<h4 id="1053-">10.5.3 条件运算符<code>?</code>前的表达式</h4>
+<p>如果一个包含二元运算符的表达式出现在三元运算符<code>?:</code>的<code>?</code>之前，那么应该给表达式添上一对圆括号。例如：</p>
+<pre><code class="lang-java">
+    (x &gt;= <span class="hljs-number">0</span>) ? x : -x;
+
+`
+</code></pre>
+<h4 id="1054-">10.5.4 特殊注解</h4>
+<p>使用<code>XXX</code> 标识处代码虽然实现了功能，但是实现的方法有待商榷，希望将来能改进。使用 <code>FIXME</code>标识处代码需要修正，甚至代码是错误的，不能工作，需要修复。</p>
+<p><a href="page09.html">PREVIOUS</a> | <a href="SUMMARY.html">CONTENTS</a> | <a href="page11.html">NEXT</a></p>
 
                     
                     </section>
@@ -367,8 +422,10 @@ Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
         </div>
 
         
+        <a href="./page09.html" class="navigation navigation-prev " aria-label="Previous page: 命名规范"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./page01.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 介绍"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./page11.html" class="navigation navigation-next " aria-label="Next page: 代码示例"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
