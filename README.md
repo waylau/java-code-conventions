@@ -16,7 +16,7 @@ Let's [READ](SUMMARY.md)!
 - 几乎没有任何一个软件，在其整个生命周期中，均由最初的作者来维护.
 - 编码规范可以改善软件的可读性，可以让程序员尽快而彻底地理解新的代码.
 
-文档最后版本由 Sun 公司在1999年4月20日更新，虽然过去十几年，但这个规范至今对编码的规范指导仍然适用，特此翻译。如有勘误欢迎指正，[点此](https://github.com/waylau/java-code-conventions/issues)提问。
+文档最后版本由 Sun 公司于1999年4月20日更新，虽然过去十几年，但这个规范至今对编码的规范指导仍然适用，特此翻译。如有勘误欢迎指正，[点此](https://github.com/waylau/java-code-conventions/issues)提问。
 
 另外有 GitBook 的版本方便阅读<http://waylau.gitbooks.io/java-code-conventions/> 或者 <http://www.waylau.com/java-code-conventions/>（国内访问速度快）
 
