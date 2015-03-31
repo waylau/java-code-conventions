@@ -28,12 +28,11 @@ Java 有两类注释: implementation comments（实现注释）和 documentation
 	 */
 
 ```
+块注释可以以/*-开头，这样indent(1)就可以将之识别为一个代码块的开始，而不会重排它。
 
 ```java
 
-	/*-indent
-	
-	<blockquote>/*-
+	/*-
 	 * Here is a block comment with some very special
 	 * formatting that I want indent(1) to ignore.
 	 *
@@ -44,7 +43,7 @@ Java 有两类注释: implementation comments（实现注释）和 documentation
 
 ```
 
-**Note:`/*-indent`** 详见于 5.2 节 "Documentation Comments"
+**Note:** 如果你不使用indent(1)，就不必在代码中使用/*-，或为他人可能对你的代码运行indent(1)作让步。详见于 5.2 节 "Documentation Comments"
 
 ####5.1.2 单行注释
 短注释可以显示在一行内，并与其后的代码具有一样的缩进层级。如果一个注释不能在一行内写完，就该采用块注释(参见"5.1.1 块注释")。单行注释之前应该有一个空行。以下是一个 Java 代码中单行注释的例子：:
