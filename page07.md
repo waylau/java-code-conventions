@@ -1,157 +1,171 @@
-##7 - Statements
-###7.1 Simple Statements
-Each line should contain at most one statement. Example:
+##7 - 语句
+###7.1 简单语句
+每行至多包含一条语句，例如:
 
 ```java
-argv++;         // Correct
-argc--;         // Correct  
-argv++; argc--; // AVOID!
-```
 
-Do not use the comma operator to group multiple statements unless it is for an obvious reason.
-Example:
+	argv++;         // 正确
+	argc--;         // 正确  
+	argv++; argc--; // 避免!
+
+```
+###7.2 复合语句
+复合语句是包含在大括号中的语句序列，形如`{ statements }`。例如下面各段。
+
+- 被括其中的语句应该较之复合语句缩进一个层次
+- 左大括号"{"应位于复合语句起始行的行尾；右大括号"}"应另起一行并与复合语句首行对齐。
+- 大括号可以被用于所有语句，包括单个语句，只要这些语句是诸如 `if-else` 或 `for`控制结构的一部分。这样便于添加语句而无需担心由于忘了加括号而引入bug。
+
+###7.3 return 语句
+一个带返回值的`return`语句不使用小括号"()"，除非它们以某种方式使返回值更为显见。例如:
 
 ```java
-if (err) {
-    Format.print(System.out, "error"), exit(1); //VERY WRONG!
-}
+	
+	return;
+	
+	return myDisk.size();
+	
+	return (size ? size : defaultSize);
+
 ```
 
-###7.2 Compound Statements
-Compound statements are statements that contain lists of statements enclosed in braces `{ statements }`. See the following sections for examples.
-
-- The enclosed statements should be indented one more level than the compound statement.
-- The opening brace should be at the end of the line that begins the compound statement; the closing brace should begin a line and be indented to the beginning of the compound statement.
-- Braces are used around all statements, even single statements, when they are part of a control structure, such as an `if-else` or `for` statement. This makes it easier to add statements without accidentally introducing bugs due to forgetting to add braces.
-
-###7.3 return Statements
-A `return` statement with a value should not use parentheses unless they make the return value more obvious in some way. Example:
+###7.4 if, if-else, if else-if else 语句
+`if-else`语句应该是以下形式:
 
 ```java
-return;
 
-return myDisk.size();
+	if (condition) {
+	    statements;
+	}
+	
+	if (condition) {
+	    statements;
+	} else {
+	    statements;
+	}
+	
+	if (condition) {
+	    statements;
+	} else if (condition) {
+	    statements;
+	} else {
+	    statements;
+	}
 
-return (size ? size : defaultSize);
 ```
 
-###7.4 if, if-else, if else-if else Statements
-The `if-else` class of statements should have the following form:
+**注意:** `if`语句通常使用`{}`。避免下面容易出错的形式:
 
 ```java
-if (condition) {
-    statements;
-}
 
-if (condition) {
-    statements;
-} else {
-    statements;
-}
+	if (condition) // 避免！这省略了括号{ }！
+	    statement;
 
-if (condition) {
-    statements;
-} else if (condition) {
-    statements;
-} else {
-    statements;
-}
 ```
 
-**Note:** `if` statements always use braces, `{}`. Avoid the following error-prone form:
+###7.5 for 语句
+`for` 语句应该是如下形式:
 
 ```java
-if (condition) //AVOID! THIS OMITS THE BRACES {}!
-    statement;
+
+	for (initialization; condition; update) {
+	    statements;
+	}
+
 ```
-###7.5 for Statements
-A ```for``` statement should have the following form:
+
+空的`for`语句 (所有工作都在初始化，条件判断，更新子句中完成) 应该是如下形式:
 
 ```java
-for (initialization; condition; update) {
-    statements;
-}
+
+	for (initialization; condition; update);
+
 ```
 
-An empty `for` statement (one in which all the work is done in the initialization, condition, and update clauses) should have the following form:
+当在for语句的初始化或更新子句中使用逗号时，避免因使用三个以上变量，而导致复杂度提高。若需要，可以在`for`循环之前(为初始化子句)或`for`循环末尾(为更新子句)使用单独的语句。
+
+###7.6 while 语句
+`while` 语句应该是如下形式:
 
 ```java
-for (initialization; condition; update);
+
+	while (condition) {
+	    statements;
+	}
+
 ```
 
-When using the comma operator in the initialization or update clause of a `for` statement, avoid the complexity of using more than three variables. If needed, use separate statements before the `for` loop (for the initialization clause) or at the end of the loop (for the update clause).
-
-###7.6 while Statements
-A `while` statement should have the following form:
+空的 `while` 语句应该是如下形式:
 
 ```java
-while (condition) {
-    statements;
-}
+
+	while (condition);
+
 ```
 
-An empty `while` statement should have the following form:
+###7.7 do-while 语句
+`do-while` 语句应该是如下形式:
 
 ```java
-while (condition);
+
+	do {
+	    statements;
+	} while (condition);
+
 ```
 
-###7.7 do-while Statements
-A `do-while` statement should have the following form:
+###7.8 switch 语句
+`switch` 语句应该是如下形式:
 
 ```java
-do {
-    statements;
-} while (condition);
+
+	switch (condition) {
+	case ABC:
+	    statements;
+	    /* falls through */
+	case DEF:
+	    statements;
+	    break;
+	case XYZ:
+	    statements;
+	    break;
+	default:
+	    statements;
+	    break;
+	}
+
 ```
 
-###7.8 switch Statements
-A `switch` statement should have the following form:
-
-```java
-switch (condition) {
-case ABC:
-    statements;
-    /* falls through */
-case DEF:
-    statements;
-    break;
-case XYZ:
-    statements;
-    break;
-default:
-    statements;
-    break;
-}
-```
-
-Every time a case falls through (doesn't include a `break` statement), add a comment where the `break` statement would normally be. This is shown in the preceding code example with the `/* falls through */` comment.
+每当一个case顺着往下执行时(因为没有`break`语句)，通常应在`break`语句的位置添加注释。上面的示例代码中就包含注释`/* falls through */`。
 
 Every `switch` statement should include a default case. The `break` in the default case is redundant, but it prevents a fall-through error if later another `case` is added.
 
-###7.9 try-catch Statements
-A `try-catch` statement should have the following format:
+###7.9 try-catch 语句
+`try-catch` 语句应该是如下格式:
 
 ```java
-try {
-    statements;
-} catch (ExceptionClass e) {
-     statements;
-}
+
+	try {
+	    statements;
+	} catch (ExceptionClass e) {
+	     statements;
+	}
+
 ```
 
-A `try-catch` statement may also be followed by `finally`, which executes regardless of whether or not the `try` block has completed successfully.
+一个`try-catch`语句后面也可能跟着一个`finally`语句，不论`try`代码块是否顺利执行完，它都会被执行。
 
 ```java
-try {
-    statements;
-} catch (ExceptionClass e) {
-    statements;
-} finally {
-    statements;
-}
+
+	try {
+	    statements;
+	} catch (ExceptionClass e) {
+	    statements;
+	} finally {
+	    statements;
+	}
+
 ```
 
-[CONTENTS](TOC.md)
 
-[PREVIOUS](page06.md) [NEXT](page08.md)
+[PREVIOUS](page06.md) | [CONTENTS](SUMMARY.md) | [NEXT](page08.md)
