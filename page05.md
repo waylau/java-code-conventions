@@ -1,108 +1,130 @@
 ##5 - 注释
-Java programs can have two kinds of comments: implementation comments and documentation comments. Implementation comments are those found in C++, which are delimited by `/*...*/`, and `//`. Documentation comments (known as "doc comments") are Java-only, and are delimited by `/**...*/`. Doc comments can be extracted to HTML files using the javadoc tool.
+Java 有两类注释: implementation comments（实现注释）和 documentation comments（文档注释）。 实现注释常见于 C++,使用 `/*...*/`,和 `//`。文档注释 (也称为"doc comments") 是 Java 独有的,使用 `/**...*/`。文档注释可以通过 javadoc 工具转成 HTML 文件。
 
-Implementation comments are meant for commenting out code or for comments about the particular implementation. Doc comments are meant to describe the specification of the code, from an implementation-free perspective. to be read by developers who might not necessarily have the source code at hand.
+实现注释用以注释代码或者特殊的实现。 文档注释从 implementation-free (实现自由)的角度描述代码的规范。它可以被那些手头没有源码的开发人员读懂。
 
-Comments should be used to give overviews of code and provide additional information that is not readily available in the code itself. Comments should contain only information that is relevant to reading and understanding the program. For example, information about how the corresponding package is built or in what directory it resides should not be included as a comment.
+注释应被用来给出代码的总览，并提供代码自身没有提供的附加信息。注释应该仅包含与阅读和理解程序有关的信息。例如，相应的包如何被建立或位于哪个目录下之类的信息不应包括在注释中。
 
-Discussion of nontrivial or nonobvious design decisions is appropriate, but avoid duplicating information that is present in (and clear from) the code. It is too easy for redundant comments to get out of date. In general, avoid any comments that are likely to get out of date as the code evolves.
+在注释里，对设计决策中重要的或者不是显而易见的地方进行说明是可以的，但应避免提供代码中己清晰表达出来的重复信息。多余的的注释很容易过时。通常应避免那些代码更新就可能过时的注释。
 
-**Note:** The frequency of comments sometimes reflects poor quality of code. When you feel compelled to add a comment, consider rewriting the code to make it clearer.
+**注意:** 频繁的注释有时反映出代码的低质量。当你觉得被迫要加注释的时候，考虑一下重写代码使其更清晰。
 
-Comments should not be enclosed in large boxes drawn with asterisks or other characters.
+注释不应写在用星号或其他字符画出来的大框里。
 
-Comments should never include special characters such as form-feed and backspace.
+注释不应包括诸如制表符和回退符之类的特殊字符。
 
-###5.1 Implementation Comment Formats
-Programs can have four styles of implementation comments: block, single-line, trailing, and end-of-line.
+###5.1 实现注释的格式
+实现注释的格式主要有4种: block（块）, single-line（单行）, trailing（尾端）, 和 end-of-line（行末）.
 
-####5.1.1 Block Comments
-Block comments are used to provide descriptions of files, methods, data structures and algorithms. Block comments may be used at the beginning of each file and before each method. They can also be used in other places, such as within methods. Block comments inside a function or method should be indented to the same level as the code they describe.
+####5.1.1 块注释
+块注释通常用于提供对文件，方法，数据结构和算法的描述。块注释被置于每个文件的开始处以及每个方法之前。它们也可以被用于其他地方，比如方法内部。在功能和方法内部的块注释应该和它们所描述的代码具有一样的缩进格式。
 
-A block comment should be preceded by a blank line to set it apart from the rest of the code.
+块注释之首应该有一个空行，用于把块注释和代码分割开来，比如：
 
 ```java
-/*
- * Here is a block comment.
- */
+
+	/*
+	 * Here is a block comment.
+	 */
+
 ```
 
 ```java
-/*
- * Here is a block comment with some very special
- * formatting that I want indent(1) to ignore.
- *
- *    one
- *        two
- *            three
- */
+
+	/*-indent
+	
+	<blockquote>/*-
+	 * Here is a block comment with some very special
+	 * formatting that I want indent(1) to ignore.
+	 *
+	 *    one
+	 *        two
+	 *            three
+	 */
+
 ```
 
-**Note:** See also ["Documentation Comments"](#52-documentation-comments).
+**Note:`/*-indent`** 详见于 5.2 节 "Documentation Comments"
 
-####5.1.2 Single-Line Comments
-Short comments can appear on a single line indented to the level of the code that follows. If a comment can't be written in a single line, it should follow the block comment format (see [section 5.1.1](#511-block-comments)). A single-line comment should be preceded by a blank line. Here's an example of a single-line comment in Java code (also see ["Documentation Comments"](#52-documentation-comments)):
+####5.1.2 单行注释
+短注释可以显示在一行内，并与其后的代码具有一样的缩进层级。如果一个注释不能在一行内写完，就该采用块注释(参见"5.1.1 块注释")。单行注释之前应该有一个空行。以下是一个 Java 代码中单行注释的例子：:
 
 ```java
-if (condition) {
-    /* Handle the condition. */
-    ...
-}
+
+	if (condition) {
+
+	    /* Handle the condition. */
+	    ...
+	}
+
 ```
 
-####5.1.3 Trailing Comments
-Very short comments can appear on the same line as the code they describe, but should be shifted far enough to separate them from the statements. If more than one short comment appears in a chunk of code, they should all be indented to the same tab setting.
+####5.1.3 尾端注释
+极短的注释可以与它们所要描述的代码位于同一行，但是应该有足够的空白来分开代码和注释。若有多个短注释出现于大段代码中，它们应该具有相同的缩进。
 
-Here's an example of a trailing comment in Java code:
+以下是一个Java代码中尾端注释的例子：
 
 ```java
-if (a == 2) {
-    return true;            /* special case */
-} else {
-    return isPrime(a);      /* works only for odd a */
-}
+
+	if (a == 2) {
+	    return TRUE;            /* special case */
+	} else {
+	    return isPrime(a);      /* works only for odd a */
+	}
+
 ```
 
-####5.1.4 End-Of-Line Comments
-The `//` comment delimiter can comment out a complete line or only a partial line. It shouldn't be used on consecutive multiple lines for text comments; however, it can be used in consecutive multiple lines for commenting out sections of code. Examples of all three styles follow:
+####5.1.4 行末注释
+注释界定符 `//` ，可以注释掉整行或者一行中的一部分。它一般不用于连续多行的注释文本；然而，它可以用来注释掉连续多行的代码段。以下是所有三种风格的例子：
 
 ```java
-if (foo > 1) {
-    // Do a double-flip.
-    ...
-}
-else
-    return false;          // Explain why here.
 
-//if (bar > 1) {
-//
-//    // Do a triple-flip.
-//    ...
-//}
-//else
-//    return false;
+	if (foo > 1) {
+	
+	    // Do a double-flip.
+	    ...
+	}
+	else
+	    return false;          // Explain why here.
+	
+	//if (bar > 1) {
+	//
+	//    // Do a triple-flip.
+	//    ...
+	//}
+	//else
+	//    return false;
+
 ```
 
-####5.2 Documentation Comments
-Note: See ["Java Source File Example"](page11.md#111-java-source-file-example) for examples of the comment formats described here.
+####5.2 文档注释
+注意：此处描述的注释格式之范例，参见["Java 源文件范例"](page11.md)。
 
-For further details, see "How to Write Doc Comments for Javadoc" which includes information on the doc comment tags (@return, @param, @see): [link](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html)
+更多细节，详见"How to Write Doc Comments for Javadoc"，里面包含了文档注释标签的信息(@return, @param, @see): 
 
-Doc comments describe Java classes, interfaces, constructors, methods, and fields. Each doc comment is set inside the comment delimiters `/**...*/`, with one comment per class, interface, or member. This comment should appear just before the declaration:
+[链接](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html)
+
+更多关于文档注释和 javadoc，详见 javadoc 主页
+
+[这里](http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-141999.html#)
+
+文档注释描述Java的类、接口、构造器，方法，以及字段(field)。每个文档注释都会被置于注释定界符 `/**...*/`之中，一个注释对应一个类、接口或成员。该注释应位于声明之前：
 
 ```java
-/**
- * The Example class provides ...
- */
-public class Example { ...
+
+	/**
+	 * The Example class provides ...
+	 */
+	public class Example { ...
+
 ```
 
-Notice that top-level classes and interfaces are not indented, while their members are. The first line of doc comment (`/**`) for classes and interfaces is not indented; subsequent doc comment lines each have 1 space of indentation (to vertically align the asterisks). Members, including constructors, have 4 spaces for the first doc comment line and 5 spaces thereafter.
+注意顶层(top-level)的类和接口是不缩进的，而其成员是缩进的。描述类和接口的文档注释的第一行(`/**`)不需缩进；随后的文档注释每行都缩进1格(使星号纵向对齐)。成员，包括构造函数在内，其文档注释的第一行缩进4格，随后每行都缩进5格。
 
-If you need to give information about a class, interface, variable, or method that isn't appropriate for documentation, use an implementation block comment (see [section 5.1.1](#511-block-comments)) or single-line (see [section 5.1.2](#512-single-line-comments)) comment immediately *after* the declaration. For example, details about the implementation of a class should go in in such an implementation block comment *following* the class statement, not in the class doc comment.
+若你想给出有关类、接口、变量或方法的信息，而这些信息又不适合写在文档中，则可使用实现块注释(见5.1.1)或紧跟在声明后面的单行注释(见5.1.2)。例如，有关一个类实现的细节，应放入紧跟在类声明后面的实现块注释中，而不是放在文档注释中。
 
-Doc comments should not be positioned inside a method or constructor definition block, because Java associates documentation comments with the first declaration *after* the comment.
+文档注释不能放在一个方法或构造器的定义块中，因为Java会将位于文档注释之后的第一个声明与其相关联。
 
-[CONTENTS](TOC.md)
 
-[PREVIOUS](page04.md) [NEXT](page06.md)
+
+[PREVIOUS](page04.md) | [CONTENTS](SUMMARY.md) | [NEXT](page06.md)
