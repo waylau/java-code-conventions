@@ -1,14 +1,16 @@
 <!DOCTYPE HTML>
-<html lang="en-US" >
+<html lang="en" >
     
     <head>
         
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Introduction | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="Chinese translation of the Code Conventions for the Java Programming Language  document. Thisdocument contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. ">
-        <meta name="generator" content="GitBook 1.5.0">
+        <meta name="generator" content="GitBook 2.6.6">
+        
+        
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,6 +18,22 @@
         <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
         <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
         
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
         
     
     
@@ -28,293 +46,223 @@
     <body>
         
         
-<link rel="stylesheet" href="gitbook/style.css">
-
-
-        
-    <div class="book" data-level="0" data-basepath="." data-revision="1427815053928">
+    <div class="book"
+        data-level="0"
+        data-chapter-title="Introduction"
+        data-filepath="README.md"
+        data-basepath="."
+        data-revision="Tue Feb 16 2016 18:02:56 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
     
 
 <div class="book-summary">
-    <div class="book-search">
-        <input type="text" placeholder="Type to search" class="form-control" />
-    </div>
-    <ul class="summary">
-        
-    	
-    	
-    	
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
 
-        
+            
 
-        
+            
     
-        
         <li class="chapter active" data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
+                
                         <i class="fa fa-check"></i>
                         
-                         Introduction
+                        Introduction
                     </a>
-                
             
             
         </li>
     
-        
         <li class="chapter " data-level="1" data-path="page01.html">
             
                 
                     <a href="./page01.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>1.</b>
                         
-                         介绍
+                        介绍
                     </a>
-                
             
             
         </li>
     
-        
         <li class="chapter " data-level="2" data-path="page02.html">
             
                 
                     <a href="./page02.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>2.</b>
                         
-                         文件名称
+                        文件名称
                     </a>
-                
             
             
         </li>
     
-        
         <li class="chapter " data-level="3" data-path="page03.html">
             
                 
                     <a href="./page03.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>3.</b>
                         
-                         文件组织
+                        文件组织
                     </a>
-                
             
             
         </li>
     
-        
         <li class="chapter " data-level="4" data-path="page04.html">
             
                 
                     <a href="./page04.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>4.</b>
                         
-                         缩进
+                        缩进
                     </a>
-                
             
             
         </li>
     
-        
         <li class="chapter " data-level="5" data-path="page05.html">
             
                 
                     <a href="./page05.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>5.</b>
                         
-                         注释
+                        注释
                     </a>
-                
             
             
         </li>
     
-        
         <li class="chapter " data-level="6" data-path="page06.html">
             
                 
                     <a href="./page06.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>6.</b>
                         
-                         声明
+                        声明
                     </a>
-                
             
             
         </li>
     
-        
         <li class="chapter " data-level="7" data-path="page07.html">
             
                 
                     <a href="./page07.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>7.</b>
                         
-                         语句
+                        语句
                     </a>
-                
             
             
         </li>
     
-        
         <li class="chapter " data-level="8" data-path="page08.html">
             
                 
                     <a href="./page08.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>8.</b>
                         
-                         空白
+                        空白
                     </a>
-                
             
             
         </li>
     
-        
         <li class="chapter " data-level="9" data-path="page09.html">
             
                 
                     <a href="./page09.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>9.</b>
                         
-                         命名规范
+                        命名规范
                     </a>
-                
             
             
         </li>
     
-        
         <li class="chapter " data-level="10" data-path="page10.html">
             
                 
                     <a href="./page10.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>10.</b>
                         
-                         编程惯例
+                        编程惯例
                     </a>
-                
             
             
         </li>
     
-        
         <li class="chapter " data-level="11" data-path="page11.html">
             
                 
                     <a href="./page11.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>11.</b>
                         
-                         代码示例
+                        代码示例
                     </a>
-                
             
             
         </li>
     
 
 
-        
-        <li class="divider"></li>
-        <li>
-            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
-        </li>
-        
-    </ul>
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
 </div>
 
     <div class="book-body">
         <div class="body-inner">
-            <div class="book-header">
+            <div class="book-header" role="navigation">
     <!-- Actions Left -->
-    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
-    
-    <div id="font-settings-wrapper" class="dropdown pull-left">
-        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
-        </a>
-        <div class="dropdown-menu font-settings">
-    <div class="dropdown-caret">
-        <span class="caret-outer"></span>
-        <span class="caret-inner"></span>
-    </div>
-
-    <div class="buttons">
-        <button type="button" id="reduce-font-size" class="button size-2">A</button>
-        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
-    </div>
-
-    <div class="buttons font-family-list">
-        <button type="button" data-font="0" class="button">Serif</button>
-        <button type="button" data-font="1" class="button">Sans</button>
-    </div>
-
-    <div class="buttons color-theme-list">
-        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
-        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
-        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
-    </div>
-</div>
-
-    </div>
-
-    <!-- Actions Right -->
-    
-    <div class="dropdown pull-right">
-        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
-        </a>
-        <div class="dropdown-menu font-settings dropdown-left">
-            <div class="dropdown-caret">
-                <span class="caret-outer"></span>
-                <span class="caret-inner"></span>
-            </div>
-            <div class="buttons">
-                <button type="button" data-sharing="twitter" class="button">Twitter</button>
-                <button type="button" data-sharing="google-plus" class="button">Google</button>
-                <button type="button" data-sharing="facebook" class="button">Facebook</button>
-                <button type="button" data-sharing="weibo" class="button">Weibo</button>
-                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
-            </div>
-        </div>
-    </div>
-    
-
-    
-    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
-    
     
 
     <!-- Title -->
@@ -324,13 +272,13 @@
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1">
+            <div class="page-wrapper" tabindex="-1" role="main">
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-">
                     
-                        <h1 id="code-conventions-for-the-java-programming-language-java-">Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</h1>
+                        <h1 id="code-conventions-for-the-java-programming-language-&#x4E2D;&#x6587;&#x7FFB;&#x8BD1;&#x300A;java-&#x7F16;&#x7801;&#x89C4;&#x8303;&#x300B;">Code Conventions for the Java Programming Language &#x4E2D;&#x6587;&#x7FFB;&#x8BD1;&#x300A;Java &#x7F16;&#x7801;&#x89C4;&#x8303;&#x300B;</h1>
 <p>Chinese translation of the <a href="http://www.oracle.com/technetwork/java/index-135089.html" target="_blank">Code Conventions for the Java Programming Language</a>  document. This
 document contains the standard conventions that we at Sun follow and recommend that others follow. It covers filenames, file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices and includes a code example. </p>
 <ul>
@@ -338,21 +286,29 @@ document contains the standard conventions that we at Sun follow and recommend t
 <li>Hardly any software is maintained for its whole life by the original author.</li>
 <li>Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.</li>
 </ul>
-<p>The last revision to this document was revised and updated on April 20, 1999 by Sun Microsystems. There is alse a GitBook version of the book: <a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> or <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>
-Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
-<p>《Java 编码规范》中文翻译。这个文档包含了 Sun 所遵循以及推荐的标准的规范。它涵盖了文件名，文件组织，压缩，声明，注释，语句，空白，命名规范，编码惯例以及一个代码示例。</p>
+<p>The last revision to this document was revised and updated on April 20, 1999 by Sun Microsystems. There is alse a GitBook version of the book: <a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> or <a href="http://waylau.com/java-code-conventions/" target="_blank">http://waylau.com/java-code-conventions/</a>
+Let&apos;s <a href="SUMMARY.md">READ</a>!</p>
+<p>&#x300A;Java &#x7F16;&#x7801;&#x89C4;&#x8303;&#x300B;&#x4E2D;&#x6587;&#x7FFB;&#x8BD1;&#x3002;&#x8FD9;&#x4E2A;&#x6587;&#x6863;&#x5305;&#x542B;&#x4E86; Sun &#x6240;&#x9075;&#x5FAA;&#x4EE5;&#x53CA;&#x63A8;&#x8350;&#x7684;&#x6807;&#x51C6;&#x7684;&#x89C4;&#x8303;&#x3002;&#x5B83;&#x6DB5;&#x76D6;&#x4E86;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x6587;&#x4EF6;&#x7EC4;&#x7EC7;&#xFF0C;&#x538B;&#x7F29;&#xFF0C;&#x58F0;&#x660E;&#xFF0C;&#x6CE8;&#x91CA;&#xFF0C;&#x8BED;&#x53E5;&#xFF0C;&#x7A7A;&#x767D;&#xFF0C;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF0C;&#x7F16;&#x7801;&#x60EF;&#x4F8B;&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#x3002;</p>
 <ul>
-<li>一个软件的生命周期中，80%的花费用于维护.</li>
-<li>几乎没有任何一个软件，在其整个生命周期中，均由最初的作者来维护.</li>
-<li>编码规范可以改善软件的可读性，可以让程序员尽快而彻底地理解新的代码.</li>
+<li>&#x4E00;&#x4E2A;&#x8F6F;&#x4EF6;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E2D;&#xFF0C;80%&#x7684;&#x82B1;&#x8D39;&#x7528;&#x4E8E;&#x7EF4;&#x62A4;.</li>
+<li>&#x51E0;&#x4E4E;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x8F6F;&#x4EF6;&#xFF0C;&#x5728;&#x5176;&#x6574;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E2D;&#xFF0C;&#x5747;&#x7531;&#x6700;&#x521D;&#x7684;&#x4F5C;&#x8005;&#x6765;&#x7EF4;&#x62A4;.</li>
+<li>&#x7F16;&#x7801;&#x89C4;&#x8303;&#x53EF;&#x4EE5;&#x6539;&#x5584;&#x8F6F;&#x4EF6;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x7A0B;&#x5E8F;&#x5458;&#x5C3D;&#x5FEB;&#x800C;&#x5F7B;&#x5E95;&#x5730;&#x7406;&#x89E3;&#x65B0;&#x7684;&#x4EE3;&#x7801;.</li>
 </ul>
-<p>文档最后版本由 Sun 公司于1999年4月20日更新，虽然过去十几年，但这个规范至今对编码的规范指导仍然适用，特此翻译。如有勘误欢迎指正，<a href="https://github.com/waylau/java-code-conventions/issues" target="_blank">点此</a>提问。</p>
-<p>另外有 GitBook 的版本方便阅读<a href="http://waylau.gitbooks.io/java-code-conventions/" target="_blank">http://waylau.gitbooks.io/java-code-conventions/</a> 或者 <a href="http://www.waylau.com/java-code-conventions/" target="_blank">http://www.waylau.com/java-code-conventions/</a>（国内访问速度快）</p>
-<p>从<a href="SUMMARY.html">目录</a>开始阅读吧</p>
-<h3 id="contact">Contact:</h3>
+<p>&#x6587;&#x6863;&#x6700;&#x540E;&#x7248;&#x672C;&#x7531; Sun &#x516C;&#x53F8;&#x4E8E;1999&#x5E74;4&#x6708;20&#x65E5;&#x66F4;&#x65B0;&#xFF0C;&#x867D;&#x7136;&#x8FC7;&#x53BB;&#x5341;&#x51E0;&#x5E74;&#xFF0C;&#x4F46;&#x8FD9;&#x4E2A;&#x89C4;&#x8303;&#x81F3;&#x4ECA;&#x5BF9;&#x7F16;&#x7801;&#x7684;&#x89C4;&#x8303;&#x6307;&#x5BFC;&#x4ECD;&#x7136;&#x9002;&#x7528;&#xFF0C;&#x7279;&#x6B64;&#x7FFB;&#x8BD1;&#x3002;&#x5982;&#x6709;&#x52D8;&#x8BEF;&#x6B22;&#x8FCE;&#x6307;&#x6B63;&#x3002;</p>
+<p>&#x4ECE;<a href="SUMMARY.md">&#x76EE;&#x5F55;</a>&#x5F00;&#x59CB;&#x9605;&#x8BFB;&#x5427;</p>
+<h3 id="get-started-&#x5982;&#x4F55;&#x5F00;&#x59CB;&#x9605;&#x8BFB;">Get Started &#x5982;&#x4F55;&#x5F00;&#x59CB;&#x9605;&#x8BFB;</h3>
+<p>&#x9009;&#x62E9;&#x4E0B;&#x9762;&#x5165;&#x53E3;&#x4E4B;&#x4E00;&#xFF1A;</p>
 <ul>
-<li>Blog:<a href="http://www.waylau.com" target="_blank">www.waylau.com</a></li>
-<li>Gmail: <a href="mailto:waylau521@gmail.com" target="_blank">waylau521@gmail.com</a></li>
+<li><a href="https://github.com/waylau/java-code-conventions" target="_blank">https://github.com/waylau/java-code-conventions</a> &#x7684; <a href="SUMMARY.md">SUMMARY.md</a>&#xFF08;&#x6E90;&#x7801;&#xFF09;</li>
+<li><a href="http://waylau.gitbooks.io/java-code-conventions" target="_blank">http://waylau.gitbooks.io/java-code-conventions</a> &#x70B9;&#x51FB; Read &#x6309;&#x94AE;&#xFF08;&#x540C;&#x6B65;&#x66F4;&#x65B0;&#xFF0C;&#x56FD;&#x5185;&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#x4E00;&#x822C;&#xFF09;</li>
+<li><a href="http://waylau.com/java-code-conventions" target="_blank">http://waylau.com/java-code-conventions</a>&#xFF08;&#x56FD;&#x5185;&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#x5FEB;&#xFF0C;&#x5B9A;&#x671F;&#x66F4;&#x65B0;&#x3002;&#x6700;&#x540E;&#x66F4;&#x65B0;&#x4E8E; 2016-2-16&#xFF09;</li>
+</ul>
+<h3 id="issue-&#x610F;&#x89C1;&#x3001;&#x5EFA;&#x8BAE;">Issue &#x610F;&#x89C1;&#x3001;&#x5EFA;&#x8BAE;</h3>
+<p>&#x5982;&#x6709;&#x52D8;&#x8BEF;&#x3001;&#x610F;&#x89C1;&#x6216;&#x5EFA;&#x8BAE;&#x6B22;&#x8FCE;&#x62CD;&#x7816; <a href="https://github.com/waylau/java-code-conventions/issues" target="_blank">https://github.com/waylau/java-code-conventions/issues</a></p>
+<h3 id="contact-&#x8054;&#x7CFB;&#x4F5C;&#x8005;">Contact &#x8054;&#x7CFB;&#x4F5C;&#x8005;:</h3>
+<ul>
+<li>Blog: <a href="http://waylau.com" target="_blank">waylau.com</a></li>
+<li>Gmail: <a href="mailto:waylau521@gmail.com" target="_blank">waylau521(at)gmail.com</a></li>
 <li>Weibo: <a href="http://weibo.com/waylau521" target="_blank">waylau521</a></li>
 <li>Twitter: <a href="https://twitter.com/waylau521" target="_blank">waylau521</a></li>
 <li>Github : <a href="https://github.com/waylau" target="_blank">waylau</a></li>
@@ -377,16 +333,24 @@ Let&#39;s <a href="SUMMARY.html">READ</a>!</p>
 <script src="gitbook/app.js"></script>
 
     
-    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
     
 
     
-    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
