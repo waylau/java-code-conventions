@@ -26,7 +26,7 @@ Let's [READ](SUMMARY.md)!
 
 * <https://github.com/waylau/java-code-conventions> 的 [SUMMARY.md](SUMMARY.md)（源码）
 * <http://waylau.gitbooks.io/java-code-conventions> 点击 Read 按钮（同步更新，国内访问速度一般）
-* <http://waylau.com/java-code-conventions>（国内访问速度快，定期更新。最后更新于 2016-2-16）
+* <http://waylau.com/java-code-conventions>（国内访问速度快，定期更新。最后更新于 2017-8-31）
 
 ### Issue 意见、建议
 
