@@ -1,299 +1,309 @@
+
 <!DOCTYPE HTML>
-<html lang="en" >
-    
+<html lang="" >
     <head>
-        
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>编程惯例 | Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>编程惯例 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.6">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
         
+    
     <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
     
         
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+    
         
     
         
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+    
         
     
         
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
-        
     
+        
     
 
         
     
     
-    <link rel="next" href="./page11.html" />
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="page11.html" />
     
     
-    <link rel="prev" href="./page09.html" />
+    <link rel="prev" href="page09.html" />
     
 
-        
     </head>
     <body>
         
+<div class="book">
+    <div class="book-summary">
         
-    <div class="book"
-        data-level="10"
-        data-chapter-title="编程惯例"
-        data-filepath="page10.md"
-        data-basepath="."
-        data-revision="Tue Feb 16 2016 18:02:56 GMT+0800 (中国标准时间)"
-        data-innerlanguage="">
-    
-
-<div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
             
-            
-            
-            
-
-            
-
-            
-    
-        <li class="chapter " data-level="0" data-path="index.html">
-            
-                
-                    <a href="./index.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                        Introduction
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1" data-path="page01.html">
-            
-                
-                    <a href="./page01.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                        介绍
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2" data-path="page02.html">
-            
-                
-                    <a href="./page02.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.</b>
-                        
-                        文件名称
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3" data-path="page03.html">
-            
-                
-                    <a href="./page03.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.</b>
-                        
-                        文件组织
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4" data-path="page04.html">
-            
-                
-                    <a href="./page04.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.</b>
-                        
-                        缩进
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5" data-path="page05.html">
-            
-                
-                    <a href="./page05.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.</b>
-                        
-                        注释
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6" data-path="page06.html">
-            
-                
-                    <a href="./page06.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.</b>
-                        
-                        声明
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7" data-path="page07.html">
-            
-                
-                    <a href="./page07.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>7.</b>
-                        
-                        语句
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="8" data-path="page08.html">
-            
-                
-                    <a href="./page08.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>8.</b>
-                        
-                        空白
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="9" data-path="page09.html">
-            
-                
-                    <a href="./page09.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>9.</b>
-                        
-                        命名规范
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter active" data-level="10" data-path="page10.html">
-            
-                
-                    <a href="./page10.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>10.</b>
-                        
-                        编程惯例
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="11" data-path="page11.html">
-            
-                
-                    <a href="./page11.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>11.</b>
-                        
-                        代码示例
-                    </a>
-            
-            
-        </li>
-    
-
-
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    Published with GitBook
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
 </div>
 
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="page01.html">
+            
+                <a href="page01.html">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="page02.html">
+            
+                <a href="page02.html">
+            
+                    
+                    文件名称
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="page03.html">
+            
+                <a href="page03.html">
+            
+                    
+                    文件组织
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="page04.html">
+            
+                <a href="page04.html">
+            
+                    
+                    缩进
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="page05.html">
+            
+                <a href="page05.html">
+            
+                    
+                    注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="page06.html">
+            
+                <a href="page06.html">
+            
+                    
+                    声明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="page07.html">
+            
+                <a href="page07.html">
+            
+                    
+                    语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="page08.html">
+            
+                <a href="page08.html">
+            
+                    
+                    空白
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="page09.html">
+            
+                <a href="page09.html">
+            
+                    
+                    命名规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="page10.html">
+            
+                <a href="page10.html">
+            
+                    
+                    编程惯例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="page11.html">
+            
+                <a href="page11.html">
+            
+                    
+                    代码示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
     <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header" role="navigation">
-    <!-- Actions Left -->
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
     
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >Code Conventions for the Java Programming Language 中文翻译《Java 编码规范》</a>
+        <a href="." >编程惯例</a>
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-">
-                    
-                        <h2 id="10--&#x7F16;&#x7A0B;&#x60EF;&#x4F8B;">10 - &#x7F16;&#x7A0B;&#x60EF;&#x4F8B;</h2>
-<h3 id="101-&#x63D0;&#x4F9B;&#x5BF9;&#x5B9E;&#x4F8B;&#x4EE5;&#x53CA;&#x7C7B;&#x53D8;&#x91CF;&#x7684;&#x8BBF;&#x95EE;">10.1 &#x63D0;&#x4F9B;&#x5BF9;&#x5B9E;&#x4F8B;&#x4EE5;&#x53CA;&#x7C7B;&#x53D8;&#x91CF;&#x7684;&#x8BBF;&#x95EE;</h3>
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="10---&#x7F16;&#x7A0B;&#x60EF;&#x4F8B;">10 - &#x7F16;&#x7A0B;&#x60EF;&#x4F8B;</h1>
+<h2 id="101-&#x63D0;&#x4F9B;&#x5BF9;&#x5B9E;&#x4F8B;&#x4EE5;&#x53CA;&#x7C7B;&#x53D8;&#x91CF;&#x7684;&#x8BBF;&#x95EE;">10.1 &#x63D0;&#x4F9B;&#x5BF9;&#x5B9E;&#x4F8B;&#x4EE5;&#x53CA;&#x7C7B;&#x53D8;&#x91CF;&#x7684;&#x8BBF;&#x95EE;</h2>
 <p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5145;&#x5206;&#x7406;&#x7531;&#xFF0C;&#x4E0D;&#x8981;&#x8BBE;&#x7F6E;&#x5B9E;&#x4F8B;&#x6216;&#x8005;&#x7C7B;&#x53D8;&#x91CF;&#x4E3A; public&#x3002;&#x901A;&#x5E38;&#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#x65E0;&#x9700;&#x663E;&#x5F0F;&#x7684;set(&#x8BBE;&#x7F6E;)&#x548C;gotten(&#x83B7;&#x53D6;)&#xFF0C;&#x901A;&#x5E38;&#x8FD9;&#x4F5C;&#x4E3A;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x7684;side effect (&#x8FB9;&#x7F18;&#x6548;&#x5E94;)&#x800C;&#x4EA7;&#x751F;&#x3002;</p>
-<p>&#x4E00;&#x4E2A;&#x5177;&#x6709; public &#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#x7684;&#x6070;&#x5F53;&#x4F8B;&#x5B50;&#x662F;,&#x7C7B;&#x4EC5;&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x6CA1;&#x6709;&#x884C;&#x4E3A;&#x3002;&#x5373;&#xFF0C;&#x82E5;&#x4F60;&#x8981;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;<code>struct</code>(&#x7ED3;&#x6784;)&#x800C;&#x975E;&#x4E00;&#x4E2A;&#x7C7B;(&#x5982;&#x679C;java&#x652F;&#x6301;<code>struct</code>&#x7684;&#x8BDD;)&#xFF0C;&#x90A3;&#x4E48;&#x628A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x4E3A; public &#x662F;&#x5408;&#x9002;&#x7684;&#x3002;</p>
-<h3 id="102-&#x5F15;&#x7528;&#x7C7B;&#x53D8;&#x91CF;&#x548C;&#x7C7B;&#x65B9;&#x6CD5;">10.2 &#x5F15;&#x7528;&#x7C7B;&#x53D8;&#x91CF;&#x548C;&#x7C7B;&#x65B9;&#x6CD5;</h3>
-<p>&#x907F;&#x514D;&#x7528;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;(<code>static</code>)&#x53D8;&#x91CF;&#x548C;&#x65B9;&#x6CD5;&#x3002;&#x5E94;&#x8BE5;&#x7528;&#x7C7B;&#x540D;&#x66FF;&#x4EE3;&#x3002;&#x4F8B;&#x5982;</p>
+<p>&#x4E00;&#x4E2A;&#x5177;&#x6709; public &#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#x7684;&#x6070;&#x5F53;&#x4F8B;&#x5B50;&#x662F;&#xFF0C;&#x7C7B;&#x4EC5;&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x6CA1;&#x6709;&#x884C;&#x4E3A;&#x3002;&#x5373;&#xFF0C;&#x82E5;&#x4F60;&#x8981;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; <code>struct</code> (&#x7ED3;&#x6784;)&#x800C;&#x975E;&#x4E00;&#x4E2A;&#x7C7B;(&#x5982;&#x679C;java&#x652F;&#x6301; <code>struct</code> &#x7684;&#x8BDD;)&#xFF0C;&#x90A3;&#x4E48;&#x628A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x4E3A; public &#x662F;&#x5408;&#x9002;&#x7684;&#x3002;</p>
+<h2 id="102-&#x5F15;&#x7528;&#x7C7B;&#x53D8;&#x91CF;&#x548C;&#x7C7B;&#x65B9;&#x6CD5;">10.2 &#x5F15;&#x7528;&#x7C7B;&#x53D8;&#x91CF;&#x548C;&#x7C7B;&#x65B9;&#x6CD5;</h2>
+<p>&#x907F;&#x514D;&#x7528;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x7C7B;&#x7684; (<code>static</code>) &#x53D8;&#x91CF;&#x548C;&#x65B9;&#x6CD5;&#x3002;&#x5E94;&#x8BE5;&#x7528;&#x7C7B;&#x540D;&#x66FF;&#x4EE3;&#x3002;&#x4F8B;&#x5982;</p>
 <pre><code class="lang-java">
     classMethod();             <span class="hljs-comment">// OK</span>
     AClass.classMethod();      <span class="hljs-comment">// OK</span>
     anObject.classMethod();    <span class="hljs-comment">// &#x907F;&#x514D;!</span>
 </code></pre>
-<h3 id="103-&#x5E38;&#x91CF;">10.3 &#x5E38;&#x91CF;</h3>
-<p>&#x4F4D;&#x4E8E;for&#x5FAA;&#x73AF;&#x4E2D;&#x4F5C;&#x4E3A;&#x8BA1;&#x6570;&#x5668;&#x503C;&#x7684;&#x6570;&#x5B57;&#x5E38;&#x91CF;&#xFF0C;&#x9664;&#x4E86;<code>-1</code>,<code>0</code>&#x548C;<code>1</code>&#x4E4B;&#x5916;&#xFF0C;&#x4E0D;&#x5E94;&#x88AB;&#x76F4;&#x63A5;&#x5199;&#x5165;&#x4EE3;&#x7801;&#x3002;</p>
-<h3 id="104-&#x53D8;&#x91CF;&#x8D4B;&#x503C;">10.4 &#x53D8;&#x91CF;&#x8D4B;&#x503C;</h3>
+<h2 id="103-&#x5E38;&#x91CF;">10.3 &#x5E38;&#x91CF;</h2>
+<p>&#x4F4D;&#x4E8E; for &#x5FAA;&#x73AF;&#x4E2D;&#x4F5C;&#x4E3A;&#x8BA1;&#x6570;&#x5668;&#x503C;&#x7684;&#x6570;&#x5B57;&#x5E38;&#x91CF;&#xFF0C;&#x9664;&#x4E86;<code>-1</code>,<code>0</code>&#x548C;<code>1</code>&#x4E4B;&#x5916;&#xFF0C;&#x4E0D;&#x5E94;&#x88AB;&#x76F4;&#x63A5;&#x5199;&#x5165;&#x4EE3;&#x7801;&#x3002;</p>
+<h2 id="104-&#x53D8;&#x91CF;&#x8D4B;&#x503C;">10.4 &#x53D8;&#x91CF;&#x8D4B;&#x503C;</h2>
 <p>&#x907F;&#x514D;&#x5728;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#x4E2D;&#x7ED9;&#x591A;&#x4E2A;&#x53D8;&#x91CF;&#x8D4B;&#x76F8;&#x540C;&#x7684;&#x503C;&#x3002;&#x5B83;&#x5F88;&#x96BE;&#x8BFB;&#x61C2;&#x3002;&#x4F8B;&#x5982;:</p>
 <pre><code class="lang-java">
     fooBar.fChar = barFoo.lchar = <span class="hljs-string">&apos;c&apos;</span>; <span class="hljs-comment">// &#x907F;&#x514D;!</span>
@@ -319,14 +329,14 @@
     a = b + c;
     d = a + r;
 </code></pre>
-<h3 id="105-&#x5176;&#x5B83;&#x60EF;&#x4F8B;">10.5 &#x5176;&#x5B83;&#x60EF;&#x4F8B;</h3>
-<h4 id="1051-&#x5706;&#x62EC;&#x53F7;">10.5.1 &#x5706;&#x62EC;&#x53F7;</h4>
+<h2 id="105-&#x5176;&#x5B83;&#x60EF;&#x4F8B;">10.5 &#x5176;&#x5B83;&#x60EF;&#x4F8B;</h2>
+<h3 id="1051-&#x5706;&#x62EC;&#x53F7;">10.5.1 &#x5706;&#x62EC;&#x53F7;</h3>
 <p>&#x4E00;&#x822C;&#x800C;&#x8A00;&#xFF0C;&#x5728;&#x542B;&#x6709;&#x591A;&#x79CD;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528;&#x5706;&#x62EC;&#x53F7;&#x6765;&#x907F;&#x514D;&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#x95EE;&#x9898;&#xFF0C;&#x662F;&#x4E2A;&#x597D;&#x65B9;&#x6CD5;&#x3002;&#x5373;&#x4F7F;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x5BF9;&#x4F60;&#x800C;&#x8A00;&#x53EF;&#x80FD;&#x5F88;&#x6E05;&#x695A;&#xFF0C;&#x4F46;&#x5BF9;&#x5176;&#x4ED6;&#x4EBA;&#x672A;&#x5FC5;&#x5982;&#x6B64;&#x3002;&#x4F60;&#x4E0D;&#x80FD;&#x5047;&#x8BBE;&#x522B;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x548C;&#x4F60;&#x4E00;&#x6837;&#x6E05;&#x695A;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x3002;</p>
 <pre><code class="lang-java">
     <span class="hljs-keyword">if</span> (a == b &amp;&amp; c == d)     <span class="hljs-comment">// &#x907F;&#x514D;!</span>
     <span class="hljs-keyword">if</span> ((a == b) &amp;&amp; (c == d)) <span class="hljs-comment">// &#x6B63;&#x786E;</span>
 </code></pre>
-<h4 id="1052-&#x8FD4;&#x56DE;&#x503C;">10.5.2 &#x8FD4;&#x56DE;&#x503C;</h4>
+<h3 id="1052-&#x8FD4;&#x56DE;&#x503C;">10.5.2 &#x8FD4;&#x56DE;&#x503C;</h3>
 <p>&#x8BBE;&#x6CD5;&#x8BA9;&#x4F60;&#x7684;&#x7A0B;&#x5E8F;&#x7ED3;&#x6784;&#x7B26;&#x5408;&#x76EE;&#x7684;&#x3002;&#x4F8B;&#x5982;:</p>
 <pre><code class="lang-java">
     <span class="hljs-keyword">if</span> (booleanExpression) {
@@ -350,61 +360,91 @@
 <pre><code class="lang-java">
     <span class="hljs-keyword">return</span> (condition ? x : y);
 </code></pre>
-<h4 id="1053-&#x6761;&#x4EF6;&#x8FD0;&#x7B97;&#x7B26;&#x524D;&#x7684;&#x8868;&#x8FBE;&#x5F0F;">10.5.3 &#x6761;&#x4EF6;&#x8FD0;&#x7B97;&#x7B26;<code>?</code>&#x524D;&#x7684;&#x8868;&#x8FBE;&#x5F0F;</h4>
+<h3 id="1053-&#x6761;&#x4EF6;&#x8FD0;&#x7B97;&#x7B26;&#x524D;&#x7684;&#x8868;&#x8FBE;&#x5F0F;">10.5.3 &#x6761;&#x4EF6;&#x8FD0;&#x7B97;&#x7B26;<code>?</code>&#x524D;&#x7684;&#x8868;&#x8FBE;&#x5F0F;</h3>
 <p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x4E8C;&#x5143;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x51FA;&#x73B0;&#x5728;&#x4E09;&#x5143;&#x8FD0;&#x7B97;&#x7B26;<code>?:</code>&#x7684;<code>?</code>&#x4E4B;&#x524D;&#xFF0C;&#x90A3;&#x4E48;&#x5E94;&#x8BE5;&#x7ED9;&#x8868;&#x8FBE;&#x5F0F;&#x6DFB;&#x4E0A;&#x4E00;&#x5BF9;&#x5706;&#x62EC;&#x53F7;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
 <pre><code class="lang-java">
     (x &gt;= <span class="hljs-number">0</span>) ? x : -x;
-
-`
 </code></pre>
-<h4 id="1054-&#x7279;&#x6B8A;&#x6CE8;&#x89E3;">10.5.4 &#x7279;&#x6B8A;&#x6CE8;&#x89E3;</h4>
-<p>&#x4F7F;&#x7528;<code>XXX</code> &#x6807;&#x8BC6;&#x5904;&#x4EE3;&#x7801;&#x867D;&#x7136;&#x5B9E;&#x73B0;&#x4E86;&#x529F;&#x80FD;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#x5F85;&#x5546;&#x69B7;&#xFF0C;&#x5E0C;&#x671B;&#x5C06;&#x6765;&#x80FD;&#x6539;&#x8FDB;&#x3002;&#x4F7F;&#x7528; <code>FIXME</code>&#x6807;&#x8BC6;&#x5904;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x4FEE;&#x6B63;&#xFF0C;&#x751A;&#x81F3;&#x4EE3;&#x7801;&#x662F;&#x9519;&#x8BEF;&#x7684;&#xFF0C;&#x4E0D;&#x80FD;&#x5DE5;&#x4F5C;&#xFF0C;&#x9700;&#x8981;&#x4FEE;&#x590D;&#x3002;</p>
+<h3 id="1054-&#x7279;&#x6B8A;&#x6CE8;&#x89E3;">10.5.4 &#x7279;&#x6B8A;&#x6CE8;&#x89E3;</h3>
+<p>&#x4F7F;&#x7528; <code>XXX</code> &#x6807;&#x8BC6;&#x5904;&#x4EE3;&#x7801;&#x867D;&#x7136;&#x5B9E;&#x73B0;&#x4E86;&#x529F;&#x80FD;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#x5F85;&#x5546;&#x69B7;&#xFF0C;&#x5E0C;&#x671B;&#x5C06;&#x6765;&#x80FD;&#x6539;&#x8FDB;&#x3002;&#x4F7F;&#x7528; <code>FIXME</code> &#x6807;&#x8BC6;&#x5904;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x4FEE;&#x6B63;&#xFF0C;&#x751A;&#x81F3;&#x4EE3;&#x7801;&#x662F;&#x9519;&#x8BEF;&#x7684;&#xFF0C;&#x4E0D;&#x80FD;&#x5DE5;&#x4F5C;&#xFF0C;&#x9700;&#x8981;&#x4FEE;&#x590D;&#x3002;</p>
 <p><a href="page09.html">PREVIOUS</a> | <a href="SUMMARY.md">CONTENTS</a> | <a href="page11.html">NEXT</a></p>
 
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="./page09.html" class="navigation navigation-prev " aria-label="Previous page: 命名规范"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="./page11.html" class="navigation navigation-next " aria-label="Next page: 代码示例"><i class="fa fa-angle-right"></i></a>
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="page09.html" class="navigation navigation-prev " aria-label="Previous page: 命名规范">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="page11.html" class="navigation navigation-next " aria-label="Next page: 代码示例">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
         
-<script src="gitbook/app.js"></script>
+    </div>
 
-    
-    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
-    gitbook.start(config);
-});
-</script>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"编程惯例","level":"1.11","depth":1,"next":{"title":"代码示例","level":"1.12","depth":1,"path":"page11.md","ref":"page11.md","articles":[]},"previous":{"title":"命名规范","level":"1.10","depth":1,"path":"page09.md","ref":"page09.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"page10.md","mtime":"2017-08-31T15:16:54.448Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-31T15:29:50.018Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
 
         
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
     </body>
-    
 </html>
+
